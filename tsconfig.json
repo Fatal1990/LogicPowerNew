@@ -1,0 +1,71 @@
+{
+  "compilerOptions": {
+    "target": "ES2018",
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "lib": [
+      "ESNext",
+      "ESNext.AsyncIterable",
+      "DOM",
+      "DOM.iterable",
+    ],
+    "esModuleInterop": true,
+    "keyofStringsOnly": true,
+    "allowJs": true,
+    "sourceMap": true,
+    "strict": true,
+    "noEmit": true,
+    "experimentalDecorators": true,
+    "baseUrl": ".",
+    "paths": {
+      "~/*": [
+        "./*"
+      ],
+      "@/*": [
+        "./*"
+      ],
+      "@components/*": [
+        "./components/*"
+      ],
+      "@services/*": [
+        "./services/*"
+      ],
+      "@shared/*": [
+        "./_shared/*"
+      ],
+      "@models/*": [
+        "./models/*"
+      ],
+      "@style/*": [
+        "./assets/scss/*"
+      ],
+    },
+    "types": [
+      "@nuxt/types",
+      "@nuxtjs/axios",
+      "@types/node",
+      "webpack-env"
+    ],
+    "resolveJsonModule": true,
+    "strictPropertyInitialization": false,
+    "noImplicitAny": false,
+    "jsx": "preserve",
+    "importHelpers": true,
+    "skipLibCheck": true,
+    "allowSyntheticDefaultImports": true,
+  },
+  "exclude": [
+    "node_modules",
+    ".nuxt",
+    "dist"
+  ],
+//  "include": [
+//    "src/**/*.ts",
+//    "src/**/*.tsx",
+//    "src/**/*.vue",
+//    "tests/**/*.ts",
+//    "tests/**/*.tsx",
+//    "src/_shared/type/custom.d.ts",
+//    "src/_shared/type/icons.ts"
+//  ],
+}

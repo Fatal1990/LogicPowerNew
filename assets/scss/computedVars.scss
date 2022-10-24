@@ -1,0 +1,10 @@
+:root {
+	// По умолчанию 1920px
+	--height-header: 136px;
+	--full-height-header: 136px;
+
+	@include bigMobile() {
+		--height-header: 56px;
+		--full-height-header: 56px;
+	}
+}
