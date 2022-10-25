@@ -1,9 +1,8 @@
 <template>
   <section class="payment">
     <h2 class="payment__title">Способы оплаты</h2>
-    <CheckoutRadioBtn option="Оплата картой"/>
-    <CheckoutRadioBtn option="Наличными при получении"/>
-
+    <CheckoutRadioBtn :option="decisions[0]" v-model="selected" />
+    <CheckoutRadioBtn :option="decisions[1]" v-model="selected" />
   </section>
 </template>
 
@@ -17,7 +16,11 @@ import CheckoutRadioBtn from "@/components/checkout/CheckoutRadioBtn.vue";
     CheckoutRadioBtn,
   },
 })
-export default class CheckoutPaymentComponent extends Vue {}
+export default class CheckoutPaymentComponent extends Vue {
+  selected: string = "";
+  decisions: any[] = ["Оплата картой", "Наличными при получении"];
+
+}
 </script>
 
 <style lang="scss" scoped></style>

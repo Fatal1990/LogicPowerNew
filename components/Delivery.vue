@@ -2,119 +2,97 @@
   <section class="delivery-payment">
     <div class="delivery-payment__w">
       <div class="delivery-payment__info">
-        <h1 class="delivery-payment__title">Условия доставки и оплаты</h1>
+        <h1 class="delivery-payment__title">
+          {{ _T("@Terms of delivery and payment") }}
+        </h1>
         <div class="delivery-payment__info-block info-block-b">
           <h4 class="delivery-payment__info-block-title">
-            Открыты точки самовывоза в г. Одесса по адресам:
+            {{ _T("@Self-pickup points in Odessa") }}
           </h4>
           <ul class="delivery-payment__info-block-list">
             <li class="delivery-payment__info-block-list-item">
-              Рынок "Староконный", ул. Раскидайловская 31/к, маг. ЗП-3, ЗП-4
+              {{ _T("@Prom.rynok Starokonnyy") }}
             </li>
             <li class="delivery-payment__info-block-list-item">
-              Рынок "Селянка", проспект Небесної Сотні, 14Б/12 (11).
+              {{ _T("@Nebesnoi Sotny avenue") }}
             </li>
-            <p class="delivery__text">Телефон для консультации 0800 208-977.</p>
+            <li class="delivery-payment__info-block-list-item">
+              {{ _T("@Industrial market 7 km") }}.
+            </li>
+            <p class="delivery__text">
+              {{ _T("@Telephone for consultation") }} 0800 208-977.
+            </p>
           </ul>
         </div>
       </div>
       <div class="delivery">
         <div class="delivery__info">
-          <h2 class="delivery__title">Доставка</h2>
+          <h2 class="delivery__title">{{ _T("@Delivery") }}</h2>
           <p class="delivery__text">
-            Доставка товаров, которые находится в разделе "Альтернативная
-            энергетика" и "Электротранспорт" осуществляется за счет покупателя.
+            {{ _T("@Delivery of goods Alternative energy") }}
           </p>
           <p class="delivery__text">
-            Доставка товара производятся по предоплате в размере не менее 20% от
-            стоимости заказа. В случае, когда сумма заказа меньше 300 грн,
-            предоплата производится в размере 100% от стоимости заказа. За
-            дополнительной информацией обращайтесь к менеджеру, по номеру
-            указанному на сайте.
-          </p>
-          <p class="delivery__text">
-            Доставка товара производятся по предоплате в размере не менее 20% от
-            стоимости заказа. В случае, когда сумма заказа меньше 300 грн,
-            предоплата производится в размере 100% от стоимости заказа. За
-            дополнительной информацией обращайтесь к менеджеру, по номеру
-            указанному на сайте.
+            {{ _T("@Delivery made on advance payment") }}
           </p>
         </div>
         <div class="delivery__pickup">
-          <h3 class="delivery__pickup-title">Самовывоз г.Одесса</h3>
+          <h3 class="delivery__pickup-title">{{ _T("@Pickup Odessa") }}</h3>
           <p class="delivery__text">
-            Свой заказ можно получить в любом из магазинов сети "LogicPower" в
-            Одессе
+            {{ _T("@Order received at any of stores") }}
           </p>
           <p class="delivery__text">
-            График: согласно графику работы магазинов
+            {{ _T("@Schedule") }}: {{ _T("@According to store opening hours") }}
           </p>
           <p class="delivery__text">
-            Стоимость: <span class="delivery__text-free">бесплатно</span>
+            {{ _T("@Cost") }}:
+            <span class="delivery__text-free">{{ _T("@For free") }}</span>
           </p>
         </div>
         <div class="delivery__pickup">
-          <h3 class="delivery__pickup-title">Доставка по Одессе</h3>
-          <p class="delivery__text">
-            Свой заказ можно получить в любом из магазинов сети "LogicPower" в
-            Одессе
-          </p>
-          <p class="delivery__text">
-            График: согласно графику работы магазинов
-          </p>
+          <h3 class="delivery__pickup-title">
+            {{ _T("@Delivery in Odessa") }}
+          </h3>
         </div>
         <div class="delivery__pickup info-block-b">
-          <h3 class="delivery-payment__info-block-title">График доставок:</h3>
+          <h3 class="delivery-payment__info-block-title">
+            {{ _T("@Delivery Schedule") }}:
+          </h3>
           <div class="delivery__text-w">
             <p class="delivery__text">
-              Пн-Пт: с 13:00 до 20:00 (при оформлении заказа до 14.00 - доставка
-              в тот же день, после - на следующий)*
+              {{ _T("@Mon-Fri") }}: {{ _T("@From 10:00 to 16:00") }}*
             </p>
             <p class="delivery__text">
-              Сб: с 13:00 до 19:00 (при оформлении заказа до 12.00 - доставка в
-              тот же день, после - в понедельник)*
+              {{ _T("@Sat") }}: {{ _T("@From 13:00 to 19:00") }}
             </p>
             <p class="delivery__text">
-              Вс: доставка не осуществляется (доставка в понедельник)*
+              {{ _T("@Sun") }}: {{ _T("@No delivery") }}*
             </p>
           </div>
-          <p class="delivery__text">*при условии наличия товара на складе</p>
+          <p class="delivery__text">
+            *{{ _T("@Subject to stock availability") }}
+          </p>
         </div>
         <div class="delivery__pickup info-block-b">
-          <h3 class="delivery-payment__info-block-title">Стоимость:</h3>
+          <h3 class="delivery-payment__info-block-title">{{ _T("@Cost") }}:</h3>
           <ul class="delivery-payment__info-block-list">
             <li class="delivery-payment__info-block-list-item">
-              бесплатно при сумме заказа от 2000 грн**
+              {{ _T("@Free of charge with order of 3000 UAH") }}
             </li>
             <li class="delivery-payment__info-block-list-item">
-              от 60 грн, при сумме заказа до 2000 грн**
+              {{ _T("@For more information contact manager") }}
             </li>
           </ul>
         </div>
         <div class="delivery__pickup">
-          <h3 class="delivery__pickup-title">Доставка в почтовое отделение</h3>
+          <h3 class="delivery__pickup-title">
+            {{ _T("@Delivery to post office") }}
+          </h3>
           <p class="delivery__text">
-            Забрать свой заказ можно в любом из отделений перевозчиков «Нова
-            Пошта», «Укрпошта», «Justin» или «Delivery».
+            {{ _T("@Pick up order at any of branches of carriers") }}.
           </p>
         </div>
         <div class="delivery__post">
           <div class="delivery__post-img-col">
-            <!-- <div class="delivery__post-img-w">
-              <img class="delivery__post-img" src="../assets/img/novaPoshta.png" alt="" />
-            </div>
-            <div class="delivery__post-img-w">
-              <img class="delivery__post-img" src="../assets/img/ukrPoshta.png" alt="" />
-            </div>
-          </div>
-          <div class="delivery__post-img-col">
-            <div class="delivery__post-img-w">
-              <img class="delivery__post-img" src="../assets/img/justin.png" alt="" />
-            </div>
-            <div class="delivery__post-img-w">
-              <img class="delivery__post-img" src="../assets/img/delivery.png" alt="" />
-            </div>
-          </div> -->
             <img
               class="delivery__post-img"
               src="../assets/img/novaPoshta.png"
@@ -139,117 +117,104 @@
         </div>
         <div class="delivery__pickup">
           <p class="delivery__text">
-            <span class="delivery__text-attention">Внимание!</span> Доставка
-            литиевых аккумуляторных батарей, не осуществляется Новой почтой.
+            <span class="delivery__text-attention"
+              >{{ _T("@Attention") }}!</span
+            >
+            {{ _T("@Upon receipt of order, check availability of all goods") }}
           </p>
           <p class="delivery__text">
-            <span class="delivery__text-attention">Внимание!</span> При
-            получении заказа курьерскими службами обязательно проверяйте наличие
-            всего товара в посылке, его внешний вид и комплектацию. В случае
-            повреждения товара, или неполной комплектации необходимо отказаться
-            от получения всего заказа и его оплаты, а так же сообщить нам об
-            этом по телефону Горячей линии 0800-30-15-85. Получив заказ у
-            перевозчика, Вы соглашаетесь с его внешним состоянием или
-            комплектацией.
-          </p>
-          <p class="delivery__text">
-            График: по графику отделения перевозчика.
+            {{ _T("@Schedule") }}: {{ _T("@According to carrier schedule") }}.
           </p>
         </div>
         <div class="delivery__pickup info-block-b">
-          <h3 class="delivery-payment__info-block-title">Стоимость:</h3>
+          <h3 class="delivery-payment__info-block-title">{{ _T("@Cost") }}:</h3>
           <ul class="delivery-payment__info-block-list">
             <li class="delivery-payment__info-block-list-item">
-              «Нова Пошта» - согласно тарифу перевозчика,
-              <span class="delivery__text-free">бесплатно</span> при сумме
-              заказа от 1500 грн
+              «{{ _T("@Nova Poshta") }}» -
+              {{ _T("@According to the carrier tariff") }},
+              <span class="delivery__text-free">{{ _T("@For free") }}</span>
+              {{ _T("@With an order amount of 1500 UAH") }}
             </li>
             <li class="delivery-payment__info-block-list-item">
-              «Укрпошта» - согласно тарифу перевозчика,
-              <span class="delivery__text-free">бесплатно</span> при сумме
-              заказа от 500 грн
-            </li>
-            <li class="delivery-payment__info-block-list-item">
-              «Justin» - согласно тарифу перевозчика.
-            </li>
-            <li class="delivery-payment__info-block-list-item">
-              «Delivery» - согласно тарифу перевозчика.
-              <span class="delivery__text-free">бесплатно</span> при сумме
-              заказа от 500 грн
+              «{{ _T("@Ukrposhta") }}» -
+              {{ _T("@According to the carrier tariff") }},
+              <span class="delivery__text-free">{{ _T("@For free") }}</span>
+              {{ _T("@With an order amount of 500 UAH") }}
             </li>
           </ul>
         </div>
         <div class="delivery__pickup">
-          <h3 class="delivery__pickup-title">Доставка в почтовое отделение</h3>
+          <h3 class="delivery__pickup-title">
+            {{ _T("@Address delivery by courier") }}
+          </h3>
           <div class="delivery__pickup info-block-b">
             <ul class="delivery-payment__info-block-list">
               <li class="delivery-payment__info-block-list-item">
-                Срок доставки: 2-7 дня
+                {{ _T("@Delivery time:2-7 days") }}
               </li>
               <li class="delivery-payment__info-block-list-item">
-                Стоимость доставки: 80 грн.
+                {{ _T("@Delivery cost") }}:
+                {{ _T("@According to the carrier tariff") }}
               </li>
             </ul>
           </div>
         </div>
         <div class="delivery__pickup">
           <p class="delivery__text">
-            Если у Вас нет времени на то, что бы получить Ваш заказ на складе
-            Новой Почты или в отделении Укрпочты, Вы можете воспользоваться
-            услугами Курьера Новой Почты - Доставка в кратчайшие сроки - Оплата
-            при получении.
+            {{ _T("@Unable to receive order at warehouse") }}
           </p>
           <p class="delivery__text">
-            Как получить посылку от курьера? После того, как посылка с Вашим
-            заказом прибудет к Вам в город, курьер свяжется с Вами и уточнит,
-            где и когда Вам удобно будет получить посылку. Вы предъявляете
-            курьеру свои документы (водительское удостоверение или паспорт) и
-            получаете посылку.
+            {{ _T("@Delivery ASAP") }}
+          </p>
+          <p class="delivery__text">
+            {{ _T("@Payment upon receipt") }}
+          </p>
+          <h2 class="delivery__title">
+            {{ _T("@How receive package from courier") }} ?
+          </h2>
+          <p class="delivery__text">
+            {{ _T("@After package arrived at postal office") }}
           </p>
         </div>
       </div>
       <div class="payment">
-        <h2 class="delivery__title">Оплата</h2>
+        <h2 class="delivery__title">{{ _T("@Payment") }}</h2>
         <p class="delivery__text">
-          При заказе на сумму менее 300грн, отправка осуществляется только при
-          100% предоплате.
+          {{ _T("@When ordering for less than 300 UAH") }}.
         </p>
         <div class="delivery__pickup">
-          <h3 class="delivery__pickup-title">Наличными</h3>
+          <h3 class="delivery__pickup-title">{{ _T("@In cash") }}</h3>
+          <p class="delivery__text">{{ _T("@Pay for order in cash") }}.</p>
           <p class="delivery__text">
-            Оплатить заказ наличными средствами можно при получении заказа в
-            магазинах сети «LogicPower».
-          </p>
-          <p class="delivery__text">
-            Комиссия: <span class="delivery__text-free">отсутствует</span>
+            {{ _T("@Commission") }}:
+            <span class="delivery__text-free">{{ _T("@Not available") }}</span>
           </p>
         </div>
         <div class="delivery__pickup">
-          <h3 class="delivery__pickup-title">Наложенным платежом</h3>
+          <h3 class="delivery__pickup-title">{{ _T("@Cash on delivery") }}</h3>
           <p class="delivery__text">
-            «Наложенный платеж» - услуга перевозчика, воспользовавшись которой
-            Вы можете оплатить товар при получении заказа в отделении
-            перевозчика. Отправка заказа с услугой «Наложенный платеж» возможна
-            только перевозчиками «Нова Пошта» или «Укрпошта». Внимание! Если
-            сумма заказа составляет менее чем 200 грн. Вы не можете
-            воспользоваться оплатой "Наложенный платеж". Комиссия: «Нова Пошта»,
-            «Укрпошта»
+            «{{ _T("@C.O.D") }}» -
+            {{ _T("@Carrier service to pay for goods") }}
+            {{ _T("@Attention") }}!
+            {{ _T("@If the order amount is less than 200 UAH") }} "{{
+              _T("@C.O.D")
+            }}". {{ _T("@Commission") }}:
+            {{ _T("@According to tariff of postal operator") }}
           </p>
         </div>
         <div class="delivery__pickup">
-          <h3 class="delivery__pickup-title">Онлайн Visa/Mastercard</h3>
+          <h3 class="delivery__pickup-title">
+            {{ _T("@Online Visa/Mastercard") }}
+          </h3>
           <p class="delivery__text">
-            Современные способы оплаты онлайн (через смартфон или ПК) с помощью
-            карт Visa/Mastercard и популярных платежных сервисов:
+            {{ _T("@Modern online payment methods") }}
           </p>
           <ul class="delivery-payment__info-block-list">
             <li class="delivery-payment__info-block-list-item">
-              при оформлении заказа на сайте, выбрав соответствующий способ
-              оплаты
+              {{ _T("@When placing order on site") }}
             </li>
             <li class="delivery-payment__info-block-list-item">
-              при получении заказа в магазине (ссылка или код для оплаты будет
-              сформирован менеджером при выдаче заказа)
+              {{ _T("@Upon receipt of order in store") }}
             </li>
           </ul>
         </div>
@@ -277,19 +242,16 @@
           <img class="payment__icon" src="../assets/icons/pbIcon.png" alt="" />
         </div>
         <div class="delivery__pickup">
-          <h3 class="delivery__pickup-title">Безналичным расчетом</h3>
+          <h3 class="delivery__pickup-title">{{ _T("@Cashless payment") }}</h3>
           <ol class="payment__info-block-list">
             <li>
-              После получения заказа Вам выставляется счет для оплаты,
-              актуальный на протяжении двух банковских дней. Срок поступления
-              денег на счет, в зависимости от банка, может занять до 3 рабочих
-              дней.
+              {{ _T("@Cashless payment p1") }}
             </li>
             <li>
-              После поступления суммы на счет, с Вами свяжется менеджер для
-              уточнения деталей получения или доставки заказа.Все необходимые
-              документы (оригинал счета и товарная накладная) будут доставлены
-              вместе с заказом.
+              {{ _T("@Cashless payment p2") }}
+            </li>
+            <li>
+              {{ _T("@Cashless payment p3") }}
             </li>
           </ol>
         </div>
@@ -299,7 +261,7 @@
 </template>
 
 <script lang="ts">
-import {Component, Vue } from "~/tools/version-types";
+import { Component, Vue } from "~/tools/version-types";
 
 @Component({})
 export default class DeliveryComponent extends Vue {}
@@ -326,11 +288,11 @@ export default class DeliveryComponent extends Vue {}
   }
 
   &__title {
-    @include fontUnify(42, 50, 700);
+    @include fontUnify(28, 34, 700);
     text-align: center;
 
     @include mobile {
-      @include fontUnify(24, 34, 700);
+      @include fontUnify(24, 28, 700);
     }
   }
 
@@ -341,12 +303,15 @@ export default class DeliveryComponent extends Vue {}
   }
 
   &__info-block-title {
-    @include fontUnify(24, 34);
-    letter-spacing: 0.02em;
+    @include fontUnify(22, 26, 600);
+
+    @include mobile {
+      @include fontUnify(16, 22, 500);
+    }
   }
 
   &__info-block-list {
-    @include fontUnify(18, 24);
+    @include fontUnify;
     letter-spacing: 0.02em;
     list-style: inside;
   }
@@ -368,12 +333,8 @@ export default class DeliveryComponent extends Vue {}
   gap: 32px;
 
   &__text {
-    @include fontUnify(18, 24);
+    @include fontUnify;
     letter-spacing: 0.02em;
-
-    @include mobile {
-      @include fontUnify;
-    }
   }
 
   &__text-attention {
@@ -387,12 +348,11 @@ export default class DeliveryComponent extends Vue {}
   }
 
   &__title {
-    @include fontUnify(32, 40, 600);
-    letter-spacing: 0.02em;
+    @include fontUnify(24, 28, 700);
     margin-bottom: 32px;
 
     @include mobile {
-      @include fontUnify(24, 34);
+      @include fontUnify(22, 26);
       margin-bottom: 0;
     }
   }
@@ -404,10 +364,10 @@ export default class DeliveryComponent extends Vue {}
   }
 
   &__pickup-title {
-    @include fontUnify(24, 32);
+    @include fontUnify(24, 28, 700);
 
     @include mobile {
-      @include fontUnify(20, 28);
+      @include fontUnify(22, 26);
     }
   }
 
@@ -428,9 +388,6 @@ export default class DeliveryComponent extends Vue {}
   }
 
   &__post-img-col {
-    // @extend %flex-column;
-    // justify-content: space-between;
-    // gap: 64px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -466,7 +423,7 @@ export default class DeliveryComponent extends Vue {}
   }
 
   &__info-block-list {
-    @include fontUnify(18, 24);
+    @include fontUnify;
     letter-spacing: 0.02em;
     list-style: decimal;
     padding-left: 24px;

@@ -1,6 +1,13 @@
 <template>
   <label class="radio-label" :for="option">
-    <input type="radio" :id="option" :value="option" @change="$emit('input', $event.target.value)"/>
+    <input
+      type="radio"
+      :id="option"
+      :value="option"
+      name="radio-input"
+      :checked="option === 'Оплата картой'"
+      @change="$emit('change', $event.target.value)"
+    />
     <span class="radio-label__checkmark"></span>
     <span class="radio-label__option">{{ option }}</span>
   </label>
@@ -13,6 +20,7 @@ import { Prop } from "vue-property-decorator";
 @Options({})
 export default class CheckoutRadioBtnComponent extends Vue {
   @Prop({ required: true }) option: string;
+  emits: ["change"];
 }
 </script>
 
