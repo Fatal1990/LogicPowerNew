@@ -1,30 +1,33 @@
 <template>
-  <label class="radio-label" :for="option">
-    <input
-      type="radio"
-      :id="option"
-      :value="option"
-      name="radio-input"
-      :checked="option === 'Оплата картой'"
-      @change="change"
-    />
-    <span class="radio-label__checkmark"></span>
-    <span class="radio-label__option">{{ option }}</span>
-  </label>
+  <div class="radio-label__w">
+    <label
+      class="radio-label"
+      :for="input.value"
+      v-for="input of inputList"
+      :key="input.value"
+    >
+      <input
+        type="radio"
+        :id="input.value"
+        :value="input.value"
+        :name="name"
+      />
+      <span class="radio-label__checkmark"></span>
+      <span class="radio-label__option">{{ input.title }}</span>
+    </label>
+  </div>
 </template>
 
 <script lang="ts">
 import { Options, Vue } from "~/tools/version-types";
 import { Prop } from "vue-property-decorator";
 
-@Options({})
-export default class CheckoutRadioBtnComponent extends Vue {
-  @Prop({ required: true }) option: string;
-  emits: ["change"];
-
-  change(event){
-    this.$emit('change', $event.target.value)
-  }
+@Options({
+  name: "RadioBtnGroupComponent",
+})
+export default class RadioBtnGroupComponent extends Vue {
+  @Prop({ required: true }) inputList: any[];
+  @Prop({ required: true }) name: string;
 }
 </script>
 
@@ -34,6 +37,7 @@ export default class CheckoutRadioBtnComponent extends Vue {
 
   @include fontUnify(16, 24);
 
+  padding-left: 40px;
   cursor: pointer;
 
   &:hover {
@@ -90,7 +94,15 @@ export default class CheckoutRadioBtnComponent extends Vue {
   }
 
   &__option {
-    padding-left: 40px;
+  }
+
+  &__w {
+    @include flex-container;
+    gap: 16px;
+
+    @include bigMobile {
+      flex-direction: column;
+    }
   }
 }
 </style>
