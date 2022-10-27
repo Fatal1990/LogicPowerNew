@@ -6,7 +6,7 @@
       :value="option"
       name="radio-input"
       :checked="option === 'Оплата картой'"
-      @change="$emit('change', $event.target.value)"
+      @change="change"
     />
     <span class="radio-label__checkmark"></span>
     <span class="radio-label__option">{{ option }}</span>
@@ -21,6 +21,10 @@ import { Prop } from "vue-property-decorator";
 export default class CheckoutRadioBtnComponent extends Vue {
   @Prop({ required: true }) option: string;
   emits: ["change"];
+
+  change(event){
+    this.$emit('change', $event.target.value)
+  }
 }
 </script>
 
