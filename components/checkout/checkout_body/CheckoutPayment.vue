@@ -4,9 +4,10 @@
     <RadioBtnGroup
       :inputList="cashRadio"
       :name="'paymentType'"
+      :isChecked="radioPaymentValue === RADIO_VALUES.cash"
       v-model="radioPaymentValue"
     />
-    <div v-if="radioPaymentValue === RADIO_VALUES.cash">
+    <div v-show="radioPaymentValue === RADIO_VALUES.cash">
       <CheckoutInput />
       <CheckoutInput />
     </div>
@@ -20,7 +21,7 @@
       :name="'paymentType'"
       v-model="radioPaymentValue"
     />
-    <div v-if="radioPaymentValue === RADIO_VALUES.cashlessEntepreneur">
+    <div v-show="radioPaymentValue === RADIO_VALUES.cashlessEntepreneur">
       <CheckoutInput />
       <CheckoutInput />
     </div>
@@ -29,7 +30,7 @@
       :name="'paymentType'"
       v-model="radioPaymentValue"
     />
-    <div v-if="radioPaymentValue === RADIO_VALUES.cashlessEntity">
+    <div v-show="radioPaymentValue === RADIO_VALUES.cashlessEntity">
       <CheckoutInput />
       <CheckoutInput />
     </div>
@@ -57,7 +58,7 @@
 <script lang="ts">
 import { Options, Vue } from "~/tools/version-types";
 import RadioBtnGroup from "@/components/common/buttons/RadioBtnGroup.vue";
-import CheckoutInput from "@/components/checkout/CheckoutInput.vue"
+import CheckoutInput from "@/components/checkout/CheckoutInput.vue";
 
 enum RADIO_VALUES {
   cashless = "cashless",
@@ -78,7 +79,7 @@ type RadioBtnModel = {
   name: "CheckoutPaymentComponent",
   components: {
     RadioBtnGroup,
-    CheckoutInput
+    CheckoutInput,
   },
 })
 export default class CheckoutPaymentComponent extends Vue {
@@ -127,9 +128,9 @@ export default class CheckoutPaymentComponent extends Vue {
     },
   ];
 
-  change(val) {
-    this.radioPaymentValue = val;
-  }
+  // change(val) {
+  //   this.radioPaymentValue = val;
+  // }
 }
 </script>
 

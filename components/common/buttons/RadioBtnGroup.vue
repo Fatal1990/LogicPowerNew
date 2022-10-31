@@ -11,6 +11,7 @@
         :id="input.value"
         :value="input.value"
         :name="name"
+        :checked="isChecked"
         @input="$emit('input', $event.target.value)"
       />
       <span class="radio-label__checkmark"></span>
@@ -29,6 +30,7 @@ import { Prop } from "vue-property-decorator";
 export default class RadioBtnGroupComponent extends Vue {
   @Prop({ required: true }) inputList: any[];
   @Prop({ required: true }) name: string;
+  @Prop({ required: false }) isChecked: boolean;
 }
 </script>
 
