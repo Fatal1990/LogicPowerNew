@@ -1,261 +1,177 @@
 <template>
   <section class="public-offer">
     <div class="public-offer__w">
-      <h1 class="public-offer__title">Договор публичной оферты</h1>
+      <h1 class="public-offer__title">{{_T('@Public offer agreement')}}</h1>
       <div class="public-offer__title-w">
-        <h2 class="public-offer__title">Публичный договор (оферта)</h2>
-        <p>на заказ, приобретение, продажу и доставку товаров</p>
+        <h2 class="public-offer__title">{{_T('@Public agreement (offer)')}}</h2>
+        <p>{{_T('@Order, purchase, sale and delivery of goods')}}</p>
       </div>
       <p class="public-offer__title-article">
-        Данный договор заключается между <span>ФЛП</span> (далее - Продавец) и
-        пользователем услугами интернет-сайта LogicPower.ua (далее Заказчик) и
-        определяет основные условия заказа, приобретения и доставки товаров
-        через интернет-сайт LogicPower.ua. Заказчик, действуя с целью
-        приобретения Товара, принимает условия настоящего договора купли-продажи
-        товаров (далее – Договор) на следующих условиях.
+        {{_T('@This agreement is between')}} <span>{{_T('@FLP public offer agreement')}}</span>
+         {{_T('@Hereinafter - Seller and user of website services')}} LogicPower.ua 
+         {{_T('@Hereinafter Customer and determin basic condition for order')}} LogicPower.ua. 
+         {{_T('@Customer acting for purpose')}}
       </p>
       <ol class="public-offer__info-list">
         <li class="public-offer__list-item">
-          <h2 class="public-offer__list-title">Определение терминов</h2>
+          <h2 class="public-offer__list-title">{{_T('@Definition of terms')}}</h2>
           <p class="public-offer__list-item-article">
-            Публичная оферта (далее – Оферта) - публичное предложение Продавца,
-            адресованное неопределенному кругу лиц, заключить с Продавцом
-            договор купли-продажи товара дистанционным способом (далее -
-            Договор) на условиях, содержащихся в настоящей Оферте, включая все
-            Приложения.
+            {{_T('@Definition of terms n1')}}
           </p>
           <p class="public-offer__list-item-article">
-            Заказ – решение Заказчика заказать товар и его доставку, оформленное
-            в интернет-магазине и/или поручения на приобретение и доставку
-            товаров.
+            {{_T('@Definition of terms p2')}}
           </p>
           <p class="public-offer__list-item-article">
-            Оформление заказа - заявка Заказчика на покупку Товара, которая
-            адресуется Продавцу для ее выполнения и осуществляется посредством
-            размещения Заказчиком заявки в Интернет-магазине нажатием на ссылку
-            "Оформить заказ" или предоставлением согласия на оформление заказа
-            оператору Интернет-магазина.
+            {{_T('@Definition of terms p3')}}
           </p>
           <p class="public-offer__list-item-article">
-            Подтверждение заказа - сообщение Продавца о получении заказа от
-            Заказчика и принятие такого заказа к исполнению.
+            {{_T('@Definition of terms p4')}}
           </p>
           <p class="public-offer__list-item-article">
-            Стороны - совокупное наименование Продавца и Заказчика.
+            {{_T('@Definition of terms p5')}}
           </p>
           <p class="public-offer__list-item-article">
-            Товар - электротехническое оборудование и другие товары, информация
-            о которых размещена на сайте LogicPower.ua.
+            {{_T('@Definition of terms p6')}} LogicPower.ua.
           </p>
         </li>
         <li class="public-offer__list-item">
-          <h2 class="public-offer__list-title">Общие положения</h2>
+          <h2 class="public-offer__list-title">{{_T('@General provisions')}}</h2>
           <p class="public-offer__list-item-article">
-            Приведенная ниже информация является официальным предложением
-            (офертой) интернет-сайта LogicPower.ua любому физическому лицу
-            (далее - Покупатель) заключить договор купли-продажи товаров.
-            Указанный договор является публичным, т. е. согласно статье 633
-            Гражданского кодекса Украины его условия одинаковы для всех
-            покупателей.
+            {{_T('@General provisions p1-1')}} LogicPower.ua 
+            {{_T('@General provisions p1-2')}}
           </p>
           <p class="public-offer__list-item-article">
-            Согласно статье 642 Гражданского Кодекса Украины полным и
-            безоговорочным принятием условий данного предложения (оферты), что
-            подтверждает заключение Договора купли-продажи товаров на
-            предложенных ниже условиях, является факт оформления и подтверждения
-            заказа.
+            {{_T('@General provisions p2')}}
           </p>
           <p class="public-offer__list-item-article">
-            Оформлением заказа Заказчик подтверждает согласие и безусловное
-            принятие им условий настоящего предложения (оферты).
+            {{_T('@General provisions p3')}}
           </p>
           <p class="public-offer__list-item-article">
-            Заключая Договор (акцептуя условия настоящего Предложения (Оферты)
-            путем оформления Заказа), Покупатель подтверждает следующее:
+            {{_T('@General provisions p4')}}
           </p>
           <ul class="public-offer__sublist">
             <li class="public-offer__sublist-article">
-              Заказчик целиком и полностью ознакомлен, и согласен с условиями
-              настоящего предложения (оферты);
+              {{_T('@General provisions p4.1.')}}
             </li>
             <li class="public-offer__sublist-article">
-              Заказчик дает разрешение на сбор, обработку и передачу
-              персональных данных на условиях, определенных
+              {{_T('@General provisions p4.2-1')}}
               <a class="public-offer__link" href="#"
-                >Политикой Конфиденциальности.</a
-              >
-              Кроме этого, заключением Договора Заказчик подтверждает, что он
-              уведомлен (без дополнительного уведомления) о правах,
-              установленных Законом Украины "О защите персональных данных", о
-              целях сбора данных, а также о том, что его персональные данные
-              передаются Продавцу с целью возможности выполнения условий
-              настоящего Договора, возможности проведения взаиморасчетов, а
-              также для получения счетов, актов и других документов. Заказчик
-              также соглашается с тем, что Продавец имеет право предоставлять
-              доступ и передавать его персональные данные третьим лицам без
-              каких-либо дополнительных уведомлений Заказчика, не изменяя при
-              этом цель обработки персональных данных. Объем прав Заказчика, как
-              субъекта персональных данных согласно Закону Украины "О защите
-              персональных данных" ему известен и понятен.
+                >{{_T('@General provisions p4.2 link')}}.</a
+                >
+              {{_T('@General provisions p4.2-2')}}
             </li>
           </ul>
         </li>
         <li class="public-offer__list-item">
-          <h2 class="public-offer__list-title">Цена товара</h2>
+          <h2 class="public-offer__list-title">{{_T('@Product price')}}</h2>
           <p class="public-offer__list-item-article">
-            Цена на каждую позицию Товара указана на сайте LogicPower.ua.
+            {{_T('@Product price p1')}} LogicPower.ua.
           </p>
           <p class="public-offer__list-item-article">
-            Продавец имеет право в одностороннем порядке изменить цену на любую
-            позицию Товара.
+            {{_T('@Product price p2')}}
           </p>
           <p class="public-offer__list-item-article">
-            В случае изменения цены на заказанный Товар Продавец обязуется
-            проинформировать Покупателя об изменении цены Товара.
+            {{_T('@Product price p3')}}
           </p>
           <p class="public-offer__list-item-article">
-            Заказчик вправе подтвердить либо аннулировать Заказ на приобретение
-            Товара, если цена изменена Продавцом после оформления Заказа.
+            {{_T('@Product price p4')}}
           </p>
           <p class="public-offer__list-item-article">
-            Изменение Продавцом цены на оплаченный Заказчиком Товар не
-            допускается.
+            {{_T('@Product price p5')}}
           </p>
           <p class="public-offer__list-item-article">
-            Продавец указывает стоимость доставки Товара на сайте
-            Интернет-магазина либо сообщает Заказчику при оформлении заказа
-            Оператором.
+            {{_T('@Product price p6')}}
           </p>
           <p class="public-offer__list-item-article">
-            Обязательства Покупателя по оплате Товара считаются исполненными с
-            момента поступления Продавцу денежных средств.
+            {{_T('@Product price p7')}}
           </p>
           <p class="public-offer__list-item-article">
-            Расчеты между Сторонами за Товар производятся способами, указанными
-            в разделе сайта LogicPower.ua
-            <a class="public-offer__link">«Доставка и оплата»</a>
+            {{_T('@Product price p8')}} LogicPower.ua
+            <a class="public-offer__link">«{{_T('@Delivery and payment')}}»</a>
           </p>
         </li>
         <li class="public-offer__list-item">
-          <h2 class="public-offer__list-title">Оформление заказа</h2>
+          <h2 class="public-offer__list-title">{{_T('@Ordering')}}</h2>
           <p class="public-offer__list-item-article">
-            Заказ Товара осуществляется Заказчиком через Оператора по телефонам,
-            указанным на сайте LogicPower.ua или через сервис "КОРЗИНА" сайта
+            {{_T('@Ordering p1-1')}} LogicPower.ua {{_T('@Ordering p1-2')}}
             LogicPower.ua
           </p>
           <p class="public-offer__list-item-article">
-            При регистрации на сайте LogicPower.ua Заказчик обязуется
-            предоставить следующую регистрационную информацию:
+            {{_T('@Ordering p2-1')}} LogicPower.ua {{_T('@Ordering p2-2')}}
           </p>
           <ul class="public-offer__sublist">
             <li class="public-offer__sublist-article">
-              Фамилия и имя Заказчика или указанного им лица (получателя);
+              {{_T('@Ordering p2.1')}}
             </li>
             <li class="public-offer__sublist-article">
-              Адрес, по которому следует доставить Товар (если доставка до
-              адреса Покупателя);
+              {{_T('@Ordering p2.2')}}
             </li>
             <li class="public-offer__sublist-article">
-              Адрес электронной почты;
+              {{_T('@Ordering p2.3')}}
             </li>
-            <li class="public-offer__sublist-article">Контактный телефон</li>
+            <li class="public-offer__sublist-article">{{_T('@Ordering p2.4')}}</li>
           </ul>
           <p class="public-offer__list-item-article">
-            Наименование, количество, артикул, цена выбранного Товара
-            указываются в корзине Заказчика на сайте LogicPower.ua
+            {{_T('@Ordering p3')}} LogicPower.ua
           </p>
           <p class="public-offer__list-item-article">
-            Если Продавцу необходима дополнительная информация, он вправе
-            запросить ее у Заказчика. В случае не предоставления необходимой
-            информации, Продавец не несет ответственности за предоставление
-            качественной услуги Заказчиком при покупке товаров на сайте
-            LogicPower.ua
+            {{_T('@Ordering p4')}} LogicPower.ua
           </p>
           <p class="public-offer__list-item-article">
-            При оформлении Заказа через Оператора (п. 4.1. настоящей Оферты)
-            Заказчик обязуется предоставить информацию, указанную в п. 4.2.
-            настоящей Оферты.
+            {{_T('@Ordering p5')}}
           </p>
           <p class="public-offer__list-item-article">
-            Принятие Заказчиком условий настоящей Оферты осуществляется
-            посредством внесения им соответствующих данных в регистрационную
-            форму на сайте LogicPower.ua или при оформлении Заказа через
-            Оператора. После оформления Заказа через Оператора данные о
-            заказчике регистрируются в базе данных Продавца.
+            {{_T('@Ordering p6-1')}} LogicPower.ua {{_T('@Ordering p6-2')}}
           </p>
           <p class="public-offer__list-item-article">
-            Заказчик несет ответственность за достоверность предоставленной
-            информации при оформлении Заказа.
+            {{_T('@Ordering p7')}}
           </p>
           <p class="public-offer__list-item-article">
-            Договор купли-продажи дистанционным способом между Сторонами
-            считается заключенным с момента электронного оформления заказа или
-            выдачи Продавцом Заказчику кассового или товарного чека либо иного
-            документа, подтверждающего оплату Товара.
+            {{_T('@Ordering p8')}}
           </p>
         </li>
         <li class="public-offer__list-item">
           <h2 class="public-offer__list-title">
-            Доставка и передача товара покупателю
+            {{_T('@Delivery and transfer to buyer')}}
           </h2>
           <p class="public-offer__list-item-article">
-            Способы, порядок и сроки доставки товаров указаны на сайте в разделе
-            <a class="public-offer__link" href="#">«Доставка и оплата».</a>
-            Порядок и условия доставки заказанного товара Заказчик согласовывает
-            с оператором сайта LogicPower.ua в момент оформления покупки
+            {{_T(' @Delivery and transfer to buyer p1-1')}}
+            <a class="public-offer__link" href="#">«{{_T('@Delivery and payment')}}».</a>
+            {{_T(' @Delivery and transfer to buyer p1-2')}} LogicPower.ua 
+            {{_T(' @Delivery and transfer to buyer p1-3')}}
           </p>
           <p class="public-offer__list-item-article">
-            Право собственности и риск случайной утраты или повреждения товара
-            переходит к Заказчику или его Представителю с момента получения
-            Товара путем и подписания Сторонами товарного чека и/или заказа
-            (и/или поручения на приобретение и доставку товара) на доставку.
+            {{_T('@Delivery and transfer to buyer p2')}}
           </p>
           <p class="public-offer__list-item-article">
-            Доставка товара осуществляется сотрудниками интернет-магазина
-            LogicPower.ua согласно условиям доставки, или с привлечением третьих
-            лиц (перевозчика).
+            {{_T(' @Delivery and transfer to buyer p3-1')}}
+            LogicPower.ua {{_T(' @Delivery and transfer to buyer p3-2')}}
           </p>
           <p class="public-offer__list-item-article">
-            При получении товара Заказчик должен в отделении перевозчика или в
-            присутствии курьера проверить соответствие Товара качественным и
-            количественным характеристикам, (наименование товара, количество,
-            комплектность, срок годности)
+            {{_T('@Delivery and transfer to buyer p4')}}
           </p>
           <p class="public-offer__list-item-article">
-            Заказчик или Представитель Заказчика при приемке товара подтверждает
-            своей подписью в товарном чеке и/или заказе на доставку товаров, что
-            не имеет претензий к количеству товара, внешнему виду и
-            комплектности товара.
+            {{_T('@Delivery and transfer to buyer p5')}}
           </p>
         </li>
         <li class="public-offer__list-item">
-          <h2 class="public-offer__list-title">Возврат товара</h2>
+          <h2 class="public-offer__list-title">{{_T('@Product return')}}</h2>
           <p class="public-offer__list-item-article">
-            Заказчик вправе отказаться от товара в любое время до его передачи,
-            а после передачи товара – в порядке и на условиях, определенных
-            Законом Украины «О защите прав потребителей».
+           {{_T('@Product return p1')}}
           </p>
           <p class="public-offer__list-item-article">
-            Возвращение товара надлежащего качества возможно в случае, если
-            сохранены его товарный вид, потребительские свойства, а также
-            документ, подтверждающий факт покупки и условия заказа указанного
-            товара.
+            {{_T('@Product return p2')}}
           </p>
         </li>
         <li class="public-offer__list-item">
-          <h2 class="public-offer__list-title">Ответственность сторон</h2>
+          <h2 class="public-offer__list-title">{{_T('@Responsibility of parties')}}</h2>
           <p class="public-offer__list-item-article">
-            Продавец не несет ответственности за ущерб, причиненный Заказчику вследствие ненадлежащего использования Товаров, предварительно заказанных на сайте LogicPower.ua и приобретенных у Продавца.</p>
+            {{_T('@Responsibility of parties p1-1')}} LogicPower.ua {{_T('@Responsibility of parties p1-2')}}</p>
           <p class="public-offer__list-item-article">
-            Продавец не несет ответственности за ненадлежащее, несвоевременное выполнение Заказов и своих обязательств в случае предоставления Заказчиком недостоверной или ложной информации.
+           {{_T('@Responsibility of parties p2')}}
           </p>
-          <p class="public-offer__list-item-article">
-            Покупатель имеет право: - оформить заказ в Интернет-магазине; -
-            оформить электронный договор; - требовать от Продавца исполнения
-            условий настоящего Договора.
-          </p>
-          <p class="public-offer__list-item-article">Стороны несут ответственность за выполнение своих обязательств в соответствии с действующим законодательством Украины и положениями настоящего Договора.</p>
-          <p class="public-offer__list-item-article">Стороны освобождаются от ответственности за полное или частичное неисполнение своих обязательств, если неисполнение является следствием форс-мажорных обстоятельств как: война или военные действия, землетрясение, наводнение, пожар и другие стихийные бедствия, что возникли независимо от воли Продавца и/или Заказчика после заключения настоящего договора. Сторона, которая не может выполнить свои обязательства, незамедлительно уведомляет об этом другую Сторону.</p>
+          <p class="public-offer__list-item-article">{{_T('@Responsibility of parties p3')}}</p>
+          <p class="public-offer__list-item-article">{{_T('@Responsibility of parties p4')}}</p>
         </li>        
       </ol>
     </div>
