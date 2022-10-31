@@ -6,6 +6,10 @@
       :name="'paymentType'"
       v-model="radioPaymentValue"
     />
+    <div v-if="radioPaymentValue === RADIO_VALUES.cash">
+      <CheckoutInput />
+      <CheckoutInput />
+    </div>
     <RadioBtnGroup
       :inputList="cashlessRadio"
       :name="'paymentType'"
@@ -25,6 +29,10 @@
       :name="'paymentType'"
       v-model="radioPaymentValue"
     />
+    <div v-if="radioPaymentValue === RADIO_VALUES.cashlessEntity">
+      <CheckoutInput />
+      <CheckoutInput />
+    </div>
     <RadioBtnGroup
       :inputList="inInstRadio"
       :name="'paymentType'"
