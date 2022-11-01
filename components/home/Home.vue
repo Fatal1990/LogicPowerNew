@@ -7,16 +7,9 @@
       <SliderCategoryComponent></SliderCategoryComponent>
       <div class="main-page__about-company">
         <div class="main-page__about-company-title-w">
-          <h5 class="main-page__about-company-title">О компании</h5>
+          <h5 class="main-page__about-company-title">{{_T('@About company')}}</h5>
           <p class="main-page__about-company-text">
-            История развития компании - это история событий, история команды,
-            история жизни конкретных людей. История нашей компании – это
-            ежедневная работа на результат. Достижение большой цели через
-            маленькие дистанции. Не в борьбе с конкурентами, а в здоровом
-            соперничестве, где нет победителей или проигравших. За 15 лет никем
-            не узнаваемый украинский бренд составил серьезную конкуренцию
-            всемирно известным торговым маркам на рынке Украины. Мы сумели
-            добиться высокого качества продукции по доступной цене.
+            {{_T('@History of company development')}}
           </p>
         </div>
       </div>
@@ -25,14 +18,7 @@
     <div class="main-page__team-block">
       <div class="main-page__team-w">
         <p class="main-page__team-text">
-          Команда LogicPower поставила себе новую цель – занять лидирующие
-          позиции в нише продаж для массового (розничного) потребителя. Для
-          улучшения качества и снижения сроков доставки, на территории нашего
-          склада оборудовано несколько отделений крупнейших почтовых операторов
-          Украины. Мы активно работаем над расширением службы технической
-          поддержки, сегодня у нас более 50 сервисных центров по всей территории
-          Украины История развития предполагает выход на новые горизонты, и мы
-          готовы работать на результат!
+         {{_T('@LP team set itself new goal')}}
         </p>
       </div>
     </div>
@@ -50,44 +36,44 @@
         </div>
         <div class="main-page__b2b-heading">
           <h3 class="main-page__b2b-heading-title">
-            Удобный портал для заказов и документооборота
+            {{_T('@Convenient portal for orders and workflow')}}
           </h3>
           <p class="main-page__b2b-heading-text">
-            B2B портал для оптовых покупателей - это:
+            {{_T('@B2B portal for wholesale buyers')}}
           </p>
         </div>
         <div class="main-page__b2b-info">
           <div class="main-page__b2b-info-item">
             <p class="main-page__b2b-info-text">
-              Расширение бизнеса за счет новинок и постоянного пополнения ассортимента товарной продукции. Широкий ассортимент суперсовременного оборудования  и сопутствующих товаров. Вы сможете предложить покупателю полностью готовые решения или отдельные элементы систем резервного питания, альтернативной энергетики и т.д.
+              {{_T('@Expansion of business due new products')}}
             </p>
           </div>
           <div class="main-page__b2b-info-item">
             <p class="main-page__b2b-info-text">
-              Гибкость товарного ассортимента и возможность поставок под потребности заказчика. Поскольку наша компания напрямую сотрудничает с производителями, мы имеем возможность поставки товара согласно потребности конкретного заказчика. Это не скажется на стоимости оборудования, поскольку мы практикуем индивидуальный подход к каждому заказчику.
+              {{_T('@Flexibility of product range')}}
             </p>
           </div>
           <div class="main-page__b2b-info-item">
             <p class="main-page__b2b-info-text">
-              Отличный сервис и комфортные условия сотрудничества. Оперативность и слаженность работы и взаимодействия всех служб компании в выполнении операций заказ/отправка/замена/возврат значительно упрощают для наших партнеров схему поставок, документооборота и оплаты за товар
+              {{_T('@Excellent service and comfortable conditions')}}
             </p>
           </div>
           <div class="main-page__b2b-info-item">
             <p class="main-page__b2b-info-text">
-              Гарантии качества товара и постоянную техническую поддержку для конечного потребителя.  Мы берем на себя полное обеспечение выполнения гарантийных обязательств и техническое обслуживание оборудования для каждого покупателя, который приобрел товар у наших официальных партнеров
+              {{_T('@Guaranteed product quality and technical support')}}
             </p>
           </div>
         </div>
         <a class="main-page__b2b-link" href="https://b2b.logicpower.ua/">
-          Перейти на B2B
+          {{_T('@Go to B2B')}}
         </a>
       </div>
     </div>
     <div class="main-page__coop-block">
       <div class="main-page__coop-title-w">
-        <h2 class="main-page__coop-title">Мы сотрудничаем:</h2>
+        <h2 class="main-page__coop-title">{{_T('@We cooperate')}}</h2>
         <p class="main-page__coop--title-text">
-          ТМ LOGICPOWER – 100% гарантия качества от производителя
+          ТМ LOGICPOWER – 100% {{_T('@Manufacturer quality assurance')}}
         </p>
       </div>
       <CooperationSliderComponent />
@@ -95,12 +81,12 @@
     <div class="main-page__news-block">
       <div class="main-page__news-title-w">
         <h2 class="main-page__news-title">
-          Новости
+          {{_T('@News')}}
           <span>&#38;</span>
-          Статьи
+          {{_T('@Articles')}}
         </h2>
         <p class="main-page__news-title-text">
-          все, что вам нужно знать о технологиях от LOGICPOWER
+          {{_T('@All you need to know about technologies')}} LOGICPOWER
         </p>
       </div>
       <div class="main-page__news-card-w">
@@ -115,12 +101,11 @@
             </div>
           </a>
           <div class="main-page__news-card-info">
-            <h3 class="main-page__news-card-title">Новости</h3>
+            <h3 class="main-page__news-card-title">{{_T('@News')}}</h3>
             <p class="main-page__news-card-text">
-              Полезная информация о нашей компании, товарах, мероприятиях,
-              акциях и скидках.
+             {{_T('@Useful information about our company')}}
             </p>
-            <a class="main-page__news-link" href="#">перейти</a>
+            <a class="main-page__news-link" href="#">{{_T('@Go')}}</a>
           </div>
         </div>
         <div class="main-page__news-card">
@@ -134,12 +119,11 @@
             </div>
           </a>
           <div class="main-page__news-card-info">
-            <h3 class="main-page__news-card-title">Блог</h3>
+            <h3 class="main-page__news-card-title">{{_T('@Blog')}}</h3>
             <p class="main-page__news-card-text">
-              Обзоры, статьи, консультации специалистов по использованию
-              электрооборудования
+              {{_T('@Reviews articles expert advice')}}
             </p>
-            <a class="main-page__news-link" href="#">перейти</a>
+            <a class="main-page__news-link" href="#">{{_T('@Go')}}</a>
           </div>
         </div>
         <div class="main-page__news-card">
@@ -155,10 +139,9 @@
           <div class="main-page__news-card-info">
             <h3 class="main-page__news-card-title">FAQ</h3>
             <p class="main-page__news-card-text">
-              Ответы на часто задаваемые вопросы, инструкции по эксплуатации
-              техническая поддержка
+              {{_T('@Frequently Asked Questions')}}
             </p>
-            <a class="main-page__news-link" href="#">перейти</a>
+            <a class="main-page__news-link" href="#">{{_T('@Go')}}</a>
           </div>
         </div>
       </div>

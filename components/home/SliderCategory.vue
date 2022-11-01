@@ -3,7 +3,7 @@
     <div v-if="!isMobile" class="category-slider">
       <div class="category-slider__prod">
         <div class="category-slider__prod-title-w">
-          <h3 class="category-slider__prod-title">Продукция</h3>
+          <h3 class="category-slider__prod-title">{{_T('@Products')}}</h3>
           <div class="category-slider__prod-line"></div>
         </div>
         <div class="category-slider__prod-list-w">
@@ -54,7 +54,7 @@
                 {{ slide.text }}
               </p>
               <a :href="`${slide.link}`" class="category-slider__category-link"
-                >Перейти в раздел</a
+                >{{_T('@Go to section')}}</a
               >
             </div>
           </div>
@@ -62,7 +62,7 @@
       </div>
     </div>
     <div v-if="isMobile" class="categoty-list">
-      <h3 class="categoty-list__title">Продукция</h3>
+      <h3 class="categoty-list__title">{{_T('@Products')}}</h3>
       <div class="categoty-list__container">
         <a
           class="categoty-list__item"
@@ -103,7 +103,7 @@
             stroke-linejoin="round"
           />
         </svg>
-        <span class="categoty-list__link-text">Все категории</span>
+        <span class="categoty-list__link-text">{{_T('@All categories')}}</span>
       </a>
     </div>
   </div>

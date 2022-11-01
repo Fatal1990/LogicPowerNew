@@ -10,26 +10,26 @@
           />
         </div>
         <FooterList :title="'Продукция'" :list="prodList">
-          <a class="content__catalog-link" href="#">Перейти в католог</a>
+          <a class="content__catalog-link" href="#">{{_T('@Go to catalog')}}</a>
         </FooterList>
         <FooterList :title="'Информация'" :list="infoList" />
         <div class="contacts__block">
           <div class="contacts__block-unit">
-            <h4 class="content__title">Контакты</h4>
+            <h4 class="content__title">{{_T('@Contacts')}}</h4>
             <a class="contacts__text link" href="tel:0800208941"
               >0 800 208 941</a
             >
           </div>
           <div class="contacts__block-unit">
-            <p class="contacts__text">Техподдержка:</p>
+            <p class="contacts__text">{{_T('@Technical support')}}:</p>
             <a class="contacts__text link" href="tel:+380676540790"
               >+38 (067) 654-07-90</a
             >
           </div>
           <div class="contacts__block-unit">
-            <p class="content__caption">График работы CALL-центра</p>
-            <p class="contacts__text">Пн - Пт 09:00 - 20:00</p>
-            <p class="contacts__text">Сб - Вс 10:00 - 18:00</p>
+            <p class="content__caption">{{_T('@Call center hours')}}</p>
+            <p class="contacts__text">{{_T('@Mon-Fri footer')}}</p>
+            <p class="contacts__text">{{_T('@Sat-Sun footer')}}</p>
           </div>
           <div class="contacts__block-unit">
             <a class="contacts__block-link" href="mailto:support@logicfox.ua">
@@ -58,10 +58,10 @@
                   fill="white"
                 />
               </svg>
-              <span class="contacts__block-link-text">Задать вопрос</span>
+              <span class="contacts__block-link-text">{{_T('@Ask question')}}</span>
             </a>
             <p class="content__caption">
-              Задайте нам любой интересующий вас вопрос.
+             {{_T('@Ask us any question you have')}}
             </p>
           </div>
         </div>
@@ -75,11 +75,9 @@
           </div>
           <div class="content__copyrights-unit">
             <p class="content__copyrights-caption">
-              Многолетний опыт работы в предоставлении товаров технической
-              направленности создал нашей компании имя, которое можно назвать
-              «известным брендом»
+             {{_T('@Years of experience in provision of goods')}}
             </p>
-            <p class="content__caption">&#169; 2022, Все права защищены.</p>
+            <p class="content__caption">&#169; {{_T('@All rights reserved')}}</p>
           </div>
           <div class="content__copyrights-unit">
             <div class="content__copyrights-img-w">
@@ -102,10 +100,9 @@
       <div class="subscription__block">
         <div class="subscription__block-mailing">
           <div class="subscription__block-mailing-info">
-            <h4 class="subscription__block-title">рассылка</h4>
+            <h4 class="subscription__block-title">{{_T('@Newsletter')}}</h4>
             <p class="subscription__block-text">
-              Подпишитесь на рассылку и получайте первыми полезные новости,
-              акции, бонусы и скидки. Без спама!
+              {{_T('@Subscribe to newsletter')}}
             </p>
           </div>
           <form class="subscription__block-mailing-form">
@@ -114,12 +111,12 @@
               type="email"
               placeholder="E-mail"
             />
-            <button class="subscription__block-mailing-btn">Подписаться</button>
+            <button class="subscription__block-mailing-btn">{{_T('@Subscribe')}}</button>
           </form>
         </div>
         <div class="subscription__block-social">
           <div class="subscription__block-social-w">
-            <h4 class="subscription__block-title">Присоединяйтесь</h4>
+            <h4 class="subscription__block-title">{{_T('@Join footer')}}</h4>
             <ul class="subscription__block-social-list">
               <li class="subscription__block-social-list-item">
                 <a href="" class="subscription__block-social-list-item-link">
@@ -263,16 +260,16 @@ export default class FooterComponent extends Vue {
   ];
 
   infoList: any[] = [
-    { id: 1, title: "О компании" },
-    { id: 2, title: "Контакты" },
-    { id: 3, title: "Блог" },
-    { id: 4, title: "Оплата и Доставка" },
-    { id: 5, title: "Гарантия и Сервисное обслуживание" },
-    { id: 6, title: "Политика конфиденциальности" },
-    { id: 7, title: "Договор публичной оферты" },
-    { id: 8, title: "Сотрудничество" },
-    { id: 9, title: "Инструкции" },
-    { id: 10, title: "Форум" },
+    { id: 1, title: "@About company" },
+    { id: 2, title: "@Contacts" },
+    { id: 3, title: "@Blog" },
+    { id: 4, title: "@Delivery and payment" },
+    { id: 5, title: "@Warranty and Service" },
+    { id: 6, title: "@Privacy Policy" },
+    { id: 7, title: "@Public offer agreement" },
+    { id: 8, title: "@Cooperation" },
+    { id: 9, title: "@Instructions" },
+    { id: 10, title: "@Forum" },
   ];
 
   calcMaxProdList() {
