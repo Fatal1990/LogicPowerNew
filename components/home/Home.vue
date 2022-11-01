@@ -53,36 +53,28 @@
             Удобный портал для заказов и документооборота
           </h3>
           <p class="main-page__b2b-heading-text">
-            Через личный кабинет В2В портала можно:
+            B2B портал для оптовых покупателей - это:
           </p>
         </div>
         <div class="main-page__b2b-info">
           <div class="main-page__b2b-info-item">
             <p class="main-page__b2b-info-text">
-              Browse to find the images that fit your needs and click to
-              download. Use the on-the-fly color image generation to match your
-              brand identity.
+              Расширение бизнеса за счет новинок и постоянного пополнения ассортимента товарной продукции. Широкий ассортимент суперсовременного оборудования  и сопутствующих товаров. Вы сможете предложить покупателю полностью готовые решения или отдельные элементы систем резервного питания, альтернативной энергетики и т.д.
             </p>
           </div>
           <div class="main-page__b2b-info-item">
             <p class="main-page__b2b-info-text">
-              Browse to find the images that fit your needs and click to
-              download. Use the on-the-fly color image generation to match your
-              brand identity.
+              Гибкость товарного ассортимента и возможность поставок под потребности заказчика. Поскольку наша компания напрямую сотрудничает с производителями, мы имеем возможность поставки товара согласно потребности конкретного заказчика. Это не скажется на стоимости оборудования, поскольку мы практикуем индивидуальный подход к каждому заказчику.
             </p>
           </div>
           <div class="main-page__b2b-info-item">
             <p class="main-page__b2b-info-text">
-              Browse to find the images that fit your needs and click to
-              download. Use the on-the-fly color image generation to match your
-              brand identity.
+              Отличный сервис и комфортные условия сотрудничества. Оперативность и слаженность работы и взаимодействия всех служб компании в выполнении операций заказ/отправка/замена/возврат значительно упрощают для наших партнеров схему поставок, документооборота и оплаты за товар
             </p>
           </div>
           <div class="main-page__b2b-info-item">
             <p class="main-page__b2b-info-text">
-              Browse to find the images that fit your needs and click to
-              download. Use the on-the-fly color image generation to match your
-              brand identity.
+              Гарантии качества товара и постоянную техническую поддержку для конечного потребителя.  Мы берем на себя полное обеспечение выполнения гарантийных обязательств и техническое обслуживание оборудования для каждого покупателя, который приобрел товар у наших официальных партнеров
             </p>
           </div>
         </div>
@@ -95,7 +87,7 @@
       <div class="main-page__coop-title-w">
         <h2 class="main-page__coop-title">Мы сотрудничаем:</h2>
         <p class="main-page__coop--title-text">
-          ТМ LOGICPOWER – 100% ГАРАНТИЯ КАЧЕСТВА ОТ ПРОИЗВОДИТЕЛЯ
+          ТМ LOGICPOWER – 100% гарантия качества от производителя
         </p>
       </div>
       <CooperationSliderComponent />
@@ -108,7 +100,7 @@
           Статьи
         </h2>
         <p class="main-page__news-title-text">
-          ВСЕ, ЧТО ВАМ НУЖНО ЗНАТЬ О ТЕХНОЛОГИЯХ ОТ LOGICPOWER
+          все, что вам нужно знать о технологиях от LOGICPOWER
         </p>
       </div>
       <div class="main-page__news-card-w">
