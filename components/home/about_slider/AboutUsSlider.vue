@@ -3,93 +3,36 @@
     <div class="slider" ref="sliderWindow">
       <div class="slider__arrows">
         <div class="slider__arrow-left" @click="prevSlide">
-          <svg
-              width="14"
-              height="22"
-              viewBox="0 0 14 22"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-                d="M11 3L3 11L11 19"
-                stroke="white"
-                stroke-width="5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-            />
+          <svg width="14" height="22" viewBox="0 0 14 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M11 3L3 11L11 19" stroke="white" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" />
           </svg>
         </div>
         <div class="slider__arrow-right" @click="nextSlide">
-          <svg
-              width="14"
-              height="22"
-              viewBox="0 0 14 22"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-                d="M3 3L11 11L3 19"
-                stroke="white"
-                stroke-width="5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-            />
+          <svg width="14" height="22" viewBox="0 0 14 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3 3L11 11L3 19" stroke="white" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" />
           </svg>
         </div>
       </div>
-      <ul
-          class="slider__list"
-          :style="{ '--list-translateX': translateX + 'px' }"
-          ref="slideList"
-          @touchstart="handleTouchStart"
-          @touchmove="handleTouchMove"
-          @touchend="handleTouchEnd"
-      >
-        <AboutSliderItem
-            v-for="(slide, index) of sliderData"
-            :key="index"
-            :class="{ active: index === currentSlide }"
-            :style="{ '--item-width': slideWidth + 'px' }"
-            :aboutCard="slide"
-            :isMobile="isMobile"
-            ref="slide"
-        />
+      <ul class="slider__list" :style="{ '--list-translateX': translateX + 'px' }" ref="slideList"
+        @touchstart="handleTouchStart" @touchmove="handleTouchMove" @touchend="handleTouchEnd">
+        <AboutSliderItem v-for="(slide, index) of sliderData" :key="index" :class="{ active: index === currentSlide }"
+          :style="{ '--item-width': slideWidth + 'px' }" :aboutCard="slide" :isMobile="isMobile" ref="slide" />
       </ul>
     </div>
     <div class="pagination">
-      <div
-          class="pagination__line"
-          :style="{ '--line-width': lineMobWidth + 'px' }"
-          ref="paginationLine"
-      ></div>
-      <div
-          class="pagination__line-colored"
-          :style="{ '--width-line': lineWidth + 'px' }"
-      ></div>
-      <div
-          class="pagination__item"
-          v-for="(slide, index) of sliderData"
-          :key="index"
-          ref="paginationItem"
-      >
+      <div class="pagination__line" :style="{ '--line-width': lineMobWidth + 'px' }" ref="paginationLine"></div>
+      <div class="pagination__line-colored" :style="{ '--width-line': lineWidth + 'px' }"></div>
+      <div class="pagination__item" v-for="(slide, index) of sliderData" :key="index" ref="paginationItem">
         <div class="pagination__title-w">
-          <span
-              class="pagination__title"
-              :class="{
-              active: index === currentSlide,
-            }"
-          >{{ slide.title }}
-          </span
-          >
+          <span class="pagination__title" :class="{
+            active: index === currentSlide,
+          }">{{ slide.title }}
+          </span>
           <div class="pagination__dot-w">
-            <div
-                class="pagination__dot"
-                :class="{
-                active: index === currentSlide,
-                colored: paginationColoredDot(index),
-              }"
-                @click="goToSlide(index)"
-            ></div>
+            <div class="pagination__dot" :class="{
+              active: index === currentSlide,
+              colored: paginationColoredDot(index),
+            }" @click="goToSlide(index)"></div>
           </div>
         </div>
       </div>
@@ -98,7 +41,7 @@
 </template>
 
 <script lang="ts">
-import {AboutCard} from "@/models/view/about_slider";
+import { AboutCard } from "@/models/view/about_slider";
 import AboutSliderItem from "./AboutSliderItem.vue";
 import Component from 'nuxt-class-component'
 import Vue from 'vue'
@@ -122,33 +65,53 @@ export default class AboutUsSliderComponent extends Vue {
   sliderData: AboutCard[] = [
     {
       img: "mainAboutUsImg",
+      title: "2007 год",
+      text: "регистрация бренда.  На рынке появляются компьютерные, корпуса, источники бесперебойного питания и стабилизаторы напряжения LogicPower",
+    },
+    {
+      img: "mainAboutUsImg",
       title: "2009 год",
-      text: "ТМ LogicPower была зарегистрирована в Украине в феврале 2007 года. Компания начиналась с небольшого арендованного офиса площадью 30 м² и команды из 12 сотрудников. Сегодня компания владеет 2200 квадратными метрами складов европейского образца, с которых ежедневно во все регионы Украины отправляются 1000-чи наименований нашей продукции.",
+      text: "компания выигрывает тендеры на поставку ИБП Министерству угольной промышленности Украины и на поставку компьютерных корпусов для Верховной Рады Украины",
     },
     {
       img: "mainAboutUsImg",
-      title: "2010 год",
-      text: "ТМ LogicPower была зарегистрирована в Украине в феврале 2007 года. Компания начиналась с небольшого арендованного офиса площадью 30 м² и команды из 12 сотрудников. Сегодня компания владеет 2200 квадратными метрами складов европейского образца, с которых ежедневно во все регионы Украины отправляются 1000-чи наименований нашей продукции.",
+      title: "2012-2013 год",
+      text: "компания впервые достигает оборотов – один миллион гривен в месяц. Товарная линейка пополняется аккумуляторными батареями AGM,  AGM (мультигель) и GEL",
     },
     {
       img: "mainAboutUsImg",
-      title: "2011 год",
-      text: "ТМ LogicPower была зарегистрирована в Украине в феврале 2007 года. Компания начиналась с небольшого арендованного офиса площадью 30 м² и команды из 12 сотрудников. Сегодня компания владеет 2200 квадратными метрами складов европейского образца, с которых ежедневно во все регионы Украины отправляются 1000-чи наименований нашей продукции.",
+      title: "2014 год",
+      text: "революция в сфере обеспечения энергетической независимости украинцев. Комплекты резервного питания  LogicPower помогли тысячам людей пережить веерные отключения света, связанные с энергетическим кризисом 2014 года",
     },
     {
       img: "mainAboutUsImg",
-      title: "2012 год",
-      text: "ТМ LogicPower была зарегистрирована в Украине в феврале 2007 года. Компания начиналась с небольшого арендованного офиса площадью 30 м² и команды из 12 сотрудников. Сегодня компания владеет 2200 квадратными метрами складов европейского образца, с которых ежедневно во все регионы Украины отправляются 1000-чи наименований нашей продукции.",
+      title: "2015-2016 год",
+      text: "бренд активно развивает направление альтернативной энергетики. Компания предлагает готовые решения по установке домашних СЭС «под ключ»",
     },
     {
       img: "mainAboutUsImg",
-      title: "2013-2014 год",
-      text: "ТМ LogicPower была зарегистрирована в Украине в феврале 2007 года. Компания начиналась с небольшого арендованного офиса площадью 30 м² и команды из 12 сотрудников. Сегодня компания владеет 2200 квадратными метрами складов европейского образца, с которых ежедневно во все регионы Украины отправляются 1000-чи наименований нашей продукции.",
+      title: "2017 год",
+      text: "товарные позиции LP занимают первые места в ТОП продаж известных украинских платформ ROZETKA и Prom.ua",
     },
     {
       img: "mainAboutUsImg",
-      title: "Present",
-      text: "ТМ LogicPower была зарегистрирована в Украине в феврале 2007 года. Компания начиналась с небольшого арендованного офиса площадью 30 м² и команды из 12 сотрудников. Сегодня компания владеет 2200 квадратными метрами складов европейского образца, с которых ежедневно во все регионы Украины отправляются 1000-чи наименований нашей продукции.",
+      title: "2018 год",
+      text: "компания получила международный сертификат качества ISO 9001. Бренд получил премию «Вибір року 2018». Компания становится полноправным членом «Спілки Українських Підприємців»",
+    },
+    {
+      img: "mainAboutUsImg",
+      title: "2019 год",
+      text: "бренд стабильно удерживает позиции в рейтинге  «Вибір року» и получает премию за 2019 год.  LogicPower заключает контракт с компанией CATL (ведущая мировая компания по производству литиевых АКБ). Литиевые аккумуляторы собираются как в стандартной комплектации, так и под индивидуальные потребности заказчика",
+    },
+    {
+      img: "mainAboutUsImg",
+      title: "2020-2021 год",
+      text: "компания выигрывает вновь тендер на поставки ИБП в Верховную Раду Украины. Открывается производство по сборке электрических грузовых и легковых мопедов. Создаются комплекты резервного питания для автономных систем отопления и резервного освещения с различными типами аккумуляторных батарей",
+    },
+    {
+      img: "mainAboutUsImg",
+      title: "Сегодня",
+      text: "специалисты LP разрабатывают и тестируют новые уникальные виды электротехнического оборудования. Компания имеет амбициозные планы, направленные на завоевание европейского рынка. Два новых склада, расположенных на границе с Евросоюзом, и расширение автомобильного парка позволят обеспечить украинскому и европейскому потребителю быструю доставку и комфортный сервис.",
     },
   ].map(el => AboutCard.fromJson(el));
 
@@ -167,7 +130,7 @@ export default class AboutUsSliderComponent extends Vue {
 
   paginationColoredLineWidth() {
     const paginationItemRect =
-        this.$refs.paginationItem[this.currentSlide].getBoundingClientRect();
+      this.$refs.paginationItem[this.currentSlide].getBoundingClientRect();
     const lineIndent = paginationItemRect.width / 2;
 
     this.lineWidth = paginationItemRect.width * this.currentSlide + lineIndent;
@@ -175,7 +138,7 @@ export default class AboutUsSliderComponent extends Vue {
 
   paginationlineMobWidthCalc() {
     const paginationItemRect =
-        this.$refs.paginationItem[this.currentSlide].getBoundingClientRect();
+      this.$refs.paginationItem[this.currentSlide].getBoundingClientRect();
 
     this.lineMobWidth = paginationItemRect.width * this.SlideCount;
   }
@@ -193,53 +156,53 @@ export default class AboutUsSliderComponent extends Vue {
   translateXWidthTimeOut() {
     setTimeout(() => {
       const slideRect =
-          this.$refs.slide[this.currentSlide].$el.getBoundingClientRect();
+        this.$refs.slide[this.currentSlide].$el.getBoundingClientRect();
       const slideListRect = this.$refs.slideList.scrollWidth;
       const sliderWindowRect = this.$refs.sliderWindow.getBoundingClientRect();
 
       if (window.innerWidth <= 1024) {
         this.translateX =
-            this.currentSlide *
-            (-slideRect.width -
-                (slideListRect - slideRect.width * this.SlideCount) /
-                (this.SlideCount - 1));
+          this.currentSlide *
+          (-slideRect.width -
+            (slideListRect - slideRect.width * this.SlideCount) /
+            (this.SlideCount - 1));
       } else {
         this.translateX =
-            this.currentSlide *
-            (-slideRect.width -
-                (slideListRect - slideRect.width * this.SlideCount) /
-                (this.SlideCount - 1)) +
-            (sliderWindowRect.width - slideRect.width) / 2;
+          this.currentSlide *
+          (-slideRect.width -
+            (slideListRect - slideRect.width * this.SlideCount) /
+            (this.SlideCount - 1)) +
+          (sliderWindowRect.width - slideRect.width) / 2;
       }
     }, 700);
   }
 
   translateXWidth() {
     const slideRect =
-        this.$refs.slide[this.currentSlide].$el.getBoundingClientRect();
+      this.$refs.slide[this.currentSlide].$el.getBoundingClientRect();
 
     const slideListRect = this.$refs.slideList.scrollWidth;
     const sliderWindowRect = this.$refs.sliderWindow.getBoundingClientRect();
 
     if (window.innerWidth <= 1024) {
       this.translateX =
-          this.currentSlide *
-          (-slideRect.width -
-              (slideListRect - slideRect.width * this.SlideCount) /
-              (this.SlideCount - 1));
+        this.currentSlide *
+        (-slideRect.width -
+          (slideListRect - slideRect.width * this.SlideCount) /
+          (this.SlideCount - 1));
     } else {
       this.translateX =
-          this.currentSlide *
-          (-slideRect.width -
-              (slideListRect - slideRect.width * this.SlideCount) /
-              (this.SlideCount - 1)) +
-          (sliderWindowRect.width - slideRect.width) / 2;
+        this.currentSlide *
+        (-slideRect.width -
+          (slideListRect - slideRect.width * this.SlideCount) /
+          (this.SlideCount - 1)) +
+        (sliderWindowRect.width - slideRect.width) / 2;
     }
   }
 
   calsIsMobile() {
     const mobWidth = getComputedStyle(this.$refs.sliderWidth).getPropertyValue(
-        "--mobile-width"
+      "--mobile-width"
     );
     this.isMobile = window.innerWidth <= parseInt(mobWidth);
   }
