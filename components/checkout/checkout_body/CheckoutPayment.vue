@@ -39,6 +39,7 @@
       :name="'paymentType'"
       v-model="radioPaymentValue"
     />
+    <CheckoutInst v-show="radioPaymentValue === RADIO_VALUES.inInst"/>
     <RadioBtnGroup
       :inputList="instRadio"
       :name="'paymentType'"
@@ -59,6 +60,7 @@
 import { Options, Vue } from "~/tools/version-types";
 import RadioBtnGroup from "@/components/common/buttons/RadioBtnGroup.vue";
 import CheckoutInput from "@/components/checkout/CheckoutInput.vue";
+import CheckoutInst from "@/components/checkout/common/CheckoutInst.vue";
 
 enum RADIO_VALUES {
   cashless = "cashless",
@@ -80,6 +82,7 @@ type RadioBtnModel = {
   components: {
     RadioBtnGroup,
     CheckoutInput,
+    CheckoutInst,
   },
 })
 export default class CheckoutPaymentComponent extends Vue {
@@ -134,4 +137,23 @@ export default class CheckoutPaymentComponent extends Vue {
 }
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.payment {
+  max-width: 833px;
+  width: 100%;
+
+  @include flex-container(column, center, flex-start);
+  gap: 24px;
+
+  background: white;
+  border-radius: 8px;
+
+  padding: 32px;
+
+  @include bigMobile {
+    max-width: none;
+
+    padding: 16px;
+  }
+}
+</style>
