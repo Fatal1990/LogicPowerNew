@@ -86,13 +86,16 @@ export default class RadioBtnGroupComponent extends Vue {
       content: "";
       position: absolute;
       display: none;
+
+      width: 8px;
+      height: 8px;
+      
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      width: 8px;
-      height: 8px;
+     
       border-radius: 50%;
-      background: white;
+      background-color: white;
     }
   }
 
