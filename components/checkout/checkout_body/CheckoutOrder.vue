@@ -114,8 +114,8 @@ export default class CheckoutOrderComponent extends Vue {}
 
     padding: 16px;
   }
-
 }
+
 .head {
   width: 100%;
 

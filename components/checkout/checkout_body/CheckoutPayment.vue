@@ -7,10 +7,6 @@
       :isChecked="radioPaymentValue === RADIO_VALUES.cash"
       v-model="radioPaymentValue"
     />
-    <div v-show="radioPaymentValue === RADIO_VALUES.cash">
-      <CheckoutInput />
-      <CheckoutInput />
-    </div>
     <RadioBtnGroup
       :inputList="cashlessRadio"
       :name="'paymentType'"
@@ -45,14 +41,7 @@
       :name="'paymentType'"
       v-model="radioPaymentValue"
     />
-
-    <!-- <div class="radio-item" v-for="item in cashRadio" :key="item.value">
-      <input type="radio" :value="item.value" :name="'123'">
-      <span class="mark"></span> 
-      <span>{{item.title}}</span>
-    </div>
-    <div v-if="radioValue === RADIO_VALUES.cash">
-    </div> -->
+    <CheckoutInst v-show="radioPaymentValue === RADIO_VALUES.inst"/>
   </section>
 </template>
 

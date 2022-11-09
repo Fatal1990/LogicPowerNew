@@ -8,6 +8,7 @@
           <CheckoutContacts />
           <CheckoutOrder />
           <CheckoutPayment />
+          <CheckoutComment />
         </div>
         <CheckoutAsideComponent />
       </div>
@@ -25,6 +26,7 @@ import CheckoutContactsComponent from "@/components/checkout/checkout_body/Check
 import CheckoutOrderComponent from "@/components/checkout/checkout_body/CheckoutOrder.vue";
 import CheckoutAsideComponent from "@/components/checkout/checkout_body/CheckoutAside.vue";
 import CheckoutPaymentComponent from "@/components/checkout/checkout_body/CheckoutPayment.vue";
+import CheckoutCommentComponent from "@components/checkout/checkout_body/CheckoutComment.vue";
 
 @Component({
   components: {
@@ -35,6 +37,7 @@ import CheckoutPaymentComponent from "@/components/checkout/checkout_body/Checko
     CheckoutOrderComponent,
     CheckoutAsideComponent,
     CheckoutPaymentComponent,
+    CheckoutCommentComponent
   },
 })
 export default class CheckoutComponent extends Vue {}
