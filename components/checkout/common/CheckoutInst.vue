@@ -2,7 +2,7 @@
   <div class="inst">
     <div class="inst__block">
       <p class="inst__block-caption">Выберите количество месяцев</p>
-      <div
+      <!-- <div
         class="inst__select-w"
         tabindex="0"
         :class="{ active: openList }"
@@ -34,7 +34,8 @@
             {{ instItem }}
           </div>
         </div>
-      </div>
+      </div> -->
+      <SelectGroup :placeholder="'Кол-во платежей'" :selectList="instList" v-model.lazy="selectedPayCount"/>
     </div>
     <div class="inst__line"></div>
     <div class="inst__block">
@@ -46,7 +47,7 @@
         </div>
         <div class="inst__block-row">
           <span class="inst__block-row-title">Количество платежей:</span>
-          <span class="inst__block-row-val">{{ choisedValue }}</span>
+          <span class="inst__block-row-val">{{ selectedPayCount }}</span>
         </div>
         <div class="inst__block-row">
           <span class="inst__block-row-title">Ежемесячный платеж:</span>
@@ -60,10 +61,11 @@
 <script lang="ts">
 import { Options, Vue } from "~/tools/version-types";
 import SvgIcon from "@shared/components/svg/SvgIcon.vue";
+import SelectGroup from "@/components/common/buttons/SelectGroup.vue";
 
 @Options({
   name: "CheckoutInstComponent",
-  components: { SvgIcon },
+  components: { SvgIcon, SelectGroup },
 })
 export default class CheckoutInstComponent extends Vue {
   openList: boolean = false;
@@ -72,6 +74,8 @@ export default class CheckoutInstComponent extends Vue {
   onePay: number = 0;
 
   instList: string[] = ["3 платежа", "4 платежа", "6 платежей", "12 платежей"];
+
+  selectedPayCount: '';
 
   valueToNumber() {
     this.onePay = Math.ceil(this.sum / parseFloat(this.choisedValue));
