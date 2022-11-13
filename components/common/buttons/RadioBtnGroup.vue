@@ -12,7 +12,7 @@
         :value="input.value"
         :name="name"
         :checked="isChecked"
-        @input="$emit('input', $event.target.value)"
+        :v-model=checkedValue
       />
       <span class="radio-label__checkmark"></span>
       <span class="radio-label__option">{{ input.title }}</span>
@@ -22,7 +22,7 @@
 
 <script lang="ts">
 import { Options, Vue } from "~/tools/version-types";
-import { Prop } from "vue-property-decorator";
+import { ModelSync, Prop } from "vue-property-decorator";
 
 @Options({
   name: "RadioBtnGroupComponent",
@@ -31,6 +31,9 @@ export default class RadioBtnGroupComponent extends Vue {
   @Prop({ required: true }) inputList: any[];
   @Prop({ required: true }) name: string;
   @Prop({ required: false }) isChecked: boolean;
+
+  @ModelSync("dasdas", "dasdas", { type: String })
+  readonly checkedValue!: string;
 }
 </script>
 
@@ -89,11 +92,11 @@ export default class RadioBtnGroupComponent extends Vue {
 
       width: 8px;
       height: 8px;
-      
+
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-     
+
       border-radius: 50%;
       background-color: white;
     }
