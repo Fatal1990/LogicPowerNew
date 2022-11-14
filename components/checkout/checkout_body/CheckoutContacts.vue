@@ -2,10 +2,10 @@
   <section class="contacts">
     <h2 class="contacts__title">Контактные данные</h2>
     <div class="contacts__inputs">
-      <CheckoutInputComponent></CheckoutInputComponent>
-      <CheckoutInputComponent></CheckoutInputComponent>
-      <CheckoutInputComponent></CheckoutInputComponent>
-      <CheckoutInputComponent></CheckoutInputComponent>
+      <Input />
+      <Input />
+      <Input />
+      <Input />
     </div>
   </section>
 </template>
@@ -13,11 +13,11 @@
 <script lang="ts">
 import { Options, Vue } from "~/tools/version-types";
 import SvgIcon from "@shared/components/svg/SvgIcon.vue";
-import CheckoutInputComponent from "@/components/checkout/CheckoutInput.vue";
+import Input from "@/components/common/input/Input.vue";
 
 @Options({
   name: "CheckoutContactsComponent",
-  components: { SvgIcon, CheckoutInputComponent },
+  components: { SvgIcon, Input },
 })
 export default class CheckoutContactsComponent extends Vue {}
 </script>

@@ -12,7 +12,7 @@
         :value="input.value"
         :name="name"
         :checked="isChecked"
-        :v-model=checkedValue
+        :v-model="checkedValue"
       />
       <span class="radio-label__checkmark"></span>
       <span class="radio-label__option">{{ input.title }}</span>

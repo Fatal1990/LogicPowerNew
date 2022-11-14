@@ -28,12 +28,12 @@ import { Component, Vue } from "~/tools/version-types";
 import SvgIcon from "@/_shared/components/svg/SvgIcon.vue";
 
 @Component({
-  name: "CheckoutInputComponent",
+  name: "InputComponent",
   components: {
     SvgIcon,
   },
 })
-export default class CheckoutInputComponent extends Vue {
+export default class InputComponent extends Vue {
   $refs: {
     input: HTMLInputElement;
   };
