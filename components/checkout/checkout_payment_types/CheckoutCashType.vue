@@ -1,22 +1,18 @@
-<template>
-
-</template>
+<template></template>
 
 <script lang="ts">
 import { Options, Vue } from "~/tools/version-types";
-import RadionBtnGroup from "@/components/common/buttons/RadioBtnGroup.vue";
 
 @Options({
-    name: "CheckoutCashTypeComponent",
-    components: {
-        RadionBtnGroup
-    }
+  name: "CheckoutCashTypeComponent",
 })
-export default class CheckoutCashTypeComponent extends Vue{
+export default class CheckoutCashTypeComponent extends Vue {
+  extra: {};
 
+  mounted() {
+    this.$emit("extraReady", this.extra);    
+  }
 }
 </script>
 
-<style lang="scss" scoped>
-
-</style>
+<style lang="scss" scoped></style>

@@ -18,8 +18,6 @@
       v-model="radioPaymentValue"
     />
     <div v-show="radioPaymentValue === PAYMENT_TYPE.cashlessEntepreneur">
-      <Input />
-      <Input />
     </div>
     <RadioBtnGroup
       :inputList="cashlessEntityRadio"
@@ -35,13 +33,13 @@
       :name="'paymentType'"
       v-model="radioPaymentValue"
     />
-    <CheckoutInst v-show="radioPaymentValue === PAYMENT_TYPE.inInst"/>
+    <CheckoutInst v-show="radioPaymentValue === PAYMENT_TYPE.inInst" />
     <RadioBtnGroup
       :inputList="instRadio"
       :name="'paymentType'"
       v-model="radioPaymentValue"
     />
-    <CheckoutInst v-show="radioPaymentValue === PAYMENT_TYPE.inst"/>
+    <CheckoutInst v-show="radioPaymentValue === PAYMENT_TYPE.inst" />
   </section>
 </template>
 
@@ -50,6 +48,9 @@ import { Options, Vue } from "~/tools/version-types";
 import RadioBtnGroup from "@/components/common/buttons/RadioBtnGroup.vue";
 import Input from "@/components/common/input/Input.vue";
 import CheckoutInst from "@/components/checkout/common/CheckoutInst.vue";
+import CheckoutCashType from "@/components/checkout/checkout_payment_types/CheckoutCashType.vue";
+import CheckoutCashlessType from "@/components/checkout/checkout_payment_types/CheckoutCashlessType.vue";
+import { Component } from "vue/types/umd";
 
 enum PAYMENT_TYPE {
   cashless = "cashless",
@@ -59,6 +60,11 @@ enum PAYMENT_TYPE {
   cashlessEntity = "cashlessEntity",
   cashlessEntepreneur = "cashlessEntepreneur",
 }
+
+type PaymentType = {
+  paymentType: PAYMENT_TYPE;
+  component: Component;
+};
 
 type RadioBtnModel = {
   title: string;
@@ -72,11 +78,18 @@ type RadioBtnModel = {
     RadioBtnGroup,
     Input,
     CheckoutInst,
+    CheckoutCashType,
+    CheckoutCashlessType,
   },
 })
 export default class CheckoutPaymentComponent extends Vue {
   PAYMENT_TYPE = PAYMENT_TYPE;
   radioPaymentValue: PAYMENT_TYPE = PAYMENT_TYPE.cash;
+
+  paymentTypes: PaymentType[] = [
+    { paymentType: PAYMENT_TYPE.cash, component: CheckoutCashType },
+    { paymentType: PAYMENT_TYPE.cashless, component: CheckoutCashlessType },
+  ];
 
   cashlessRadio: RadioBtnModel[] = [
     {
@@ -119,10 +132,6 @@ export default class CheckoutPaymentComponent extends Vue {
       value: PAYMENT_TYPE.cashlessEntepreneur,
     },
   ];
-
-  // change(val) {
-  //   this.radioPaymentValue = val;
-  // }
 }
 </script>
 
