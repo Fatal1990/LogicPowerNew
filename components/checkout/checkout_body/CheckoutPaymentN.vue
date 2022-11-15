@@ -1,12 +1,25 @@
 <template>
-    <div>
-        <div v-for="(paymentType, paymentTypeKey) in paymentTypes" :key="paymentTypeKey">
-            <RadioBtnGroup :radioName="paymentType" :radioFor="paymentTypeKey" :radioTitle="paymentType.title"
-                :isChecked="selectedPaymentType" v-model="selectedPaymentType" />
-            <component v-if="paymentTypeKey === selectedPaymentType" :is="paymentTypes[selectedPaymentType].component"
-                @extraReady="onExtraReady" />
-        </div>
+  <div>
+    {{ selectedPaymentType }}
+    <div
+      v-for="(paymentType, paymentTypeKey) in paymentTypes"
+      :key="paymentTypeKey"
+    >
+      <RadioBtnGroup
+        :radioName="'paymentTypes'"
+        :radioFor="paymentTypeKey"
+        :radioTitle="paymentType.title"
+        :isChecked="selectedPaymentType"
+        :radioValue="paymentTypeKey"
+        v-model="selectedPaymentType"
+      />
+      <component
+        v-if="paymentTypeKey === selectedPaymentType"
+        :is="paymentTypes[selectedPaymentType].component"
+        @extraReady="onExtraReady"
+      />
     </div>
+  </div>
 </template>
 
 <script lang="ts">
@@ -16,42 +29,38 @@ import CheckoutCashlessTypeComponent from "@/components/checkout/checkout_paymen
 import CheckoutInstTypeComponent from "@/components/checkout/checkout_payment_types/CheckoutInstType.vue";
 import RadioBtnGroup from "~/components/common/buttons/RadioBtnGroup.vue";
 
-
 @Options({
-    components: {
-        RadioBtnGroup,
-        CheckoutCashTypeComponent,
-        CheckoutCashlessTypeComponent,
-        CheckoutInstTypeComponent
-    }
+  components: {
+    RadioBtnGroup,
+    CheckoutCashTypeComponent,
+    CheckoutCashlessTypeComponent,
+    CheckoutInstTypeComponent,
+  },
 })
 export default class CheckoutPaymentN extends Vue {
-    paymentTypes = {
-        'cash': {
-            title: 'Наличными при получении',
-            component: CheckoutCashTypeComponent
-        },
-        'cashless': {
-            title: 'Оплата картой',
-            component: CheckoutCashlessTypeComponent
-        },
-        'inst': {
-            title: 'Оплата частями',
-            component: CheckoutInstTypeComponent
-        }
-    }
+  paymentTypes = {
+    cash: {
+      title: "Наличными при получении",
+      component: CheckoutCashTypeComponent,
+    },
+    cashless: {
+      title: "Оплата картой",
+      component: CheckoutCashlessTypeComponent,
+    },
+    inst: {
+      title: "Оплата частями",
+      component: CheckoutInstTypeComponent,
+    },
+  };
 
-    extra = null;
-    selectedPaymentType = 'inst';
+  extra = null;
+  selectedPaymentType = "inst";
 
-    onExtraReady(extra) {
-        this.extra = extra
-        console.log(this.extra);
-
-    }
+  onExtraReady(extra) {
+    this.extra = extra;
+    console.log(extra, this.extra);
+  }
 }
 </script>
 
-<style>
-
-</style>
+<style></style>

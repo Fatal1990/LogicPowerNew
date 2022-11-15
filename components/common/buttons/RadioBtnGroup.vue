@@ -1,13 +1,10 @@
 <template>
   <div class="radio-label__w">
-    <label
-      class="radio-label"
-      :for="radioFor"
-    >
+    <label class="radio-label" :for="radioFor">
       <input
         type="radio"
         :id="radioFor"
-        :value="radioFor"
+        :value="radioValue"
         :name="radioName"
         :checked="isChecked"
       />
@@ -19,16 +16,23 @@
 
 <script lang="ts">
 import { Options, Vue } from "~/tools/version-types";
-import { ModelSync, Prop } from "vue-property-decorator";
+import { VModel, Prop } from "vue-property-decorator";
 
 @Options({
   name: "RadioBtnGroupComponent",
 })
 export default class RadioBtnGroupComponent extends Vue {
   @Prop({ required: true }) radioName: string;
+  @Prop({ required: false }) radioValue: string;
   @Prop({ required: false }) radioTitle: string;
   @Prop({ required: false }) radioFor: string;
   @Prop({ required: false }) isChecked: boolean;
+
+  @VModel() selectedValue;
+
+  selectedValueChange(value) {
+    this.selectedValue = this.$emit("input", value);
+  }
 }
 </script>
 

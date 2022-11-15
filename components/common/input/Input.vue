@@ -47,7 +47,6 @@ export default class InputComponent extends Vue {
 
   clearInputValue() {
     this.inputValue = "";
-    console.log(this.inputValue);
   }
 }
 </script>
