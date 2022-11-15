@@ -1,7 +1,7 @@
 <template>
   <section class="delivery">
     <h2 class="delivery__title">Доставка</h2>
-
+    <CheckoutPaymentN />
     <!-- {
       1: [2092, 2093, 2094],
       2: [3, 8, 9],
@@ -19,6 +19,7 @@
 
 <script lang="ts">
 import { Options, Vue } from "~/tools/version-types";
+import CheckoutPaymentN from "@/components/checkout/checkout_body/CheckoutPaymentN.vue";
 
 interface Product {
   id: string,
@@ -28,6 +29,9 @@ interface Product {
 
 @Options({
   name: "CheckoutDeliveryComponent",
+  components: {
+    CheckoutPaymentN
+  }
 })
 export default class CheckoutDeliveryComponent extends Vue {
 

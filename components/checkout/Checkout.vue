@@ -5,11 +5,11 @@
       <h1 class="main-layout__title">Оформление заказа</h1>
       <div class="checkout__form">
         <div class="main-layout__w">
-          <CheckoutContacts />
-          <CheckoutOrder />
-          <CheckoutPayment />
+          <!-- <CheckoutContacts /> -->
+          <!-- <CheckoutOrder /> -->
+          <!-- <CheckoutPayment /> -->
           <CheckoutDelivery />
-          <CheckoutComment />
+          <!-- <CheckoutComment /> -->
         </div>
         <CheckoutAside />
       </div>

@@ -2,20 +2,17 @@
   <div class="radio-label__w">
     <label
       class="radio-label"
-      :for="input.value"
-      v-for="input of inputList"
-      :key="input.value"
+      :for="radioFor"
     >
       <input
         type="radio"
-        :id="input.value"
-        :value="input.value"
-        :name="name"
+        :id="radioFor"
+        :value="radioFor"
+        :name="radioName"
         :checked="isChecked"
-        :v-model="checkedValue"
       />
       <span class="radio-label__checkmark"></span>
-      <span class="radio-label__option">{{ input.title }}</span>
+      <span class="radio-label__option">{{ radioTitle }}</span>
     </label>
   </div>
 </template>
@@ -28,12 +25,10 @@ import { ModelSync, Prop } from "vue-property-decorator";
   name: "RadioBtnGroupComponent",
 })
 export default class RadioBtnGroupComponent extends Vue {
-  @Prop({ required: true }) inputList: any[];
-  @Prop({ required: true }) name: string;
+  @Prop({ required: true }) radioName: string;
+  @Prop({ required: false }) radioTitle: string;
+  @Prop({ required: false }) radioFor: string;
   @Prop({ required: false }) isChecked: boolean;
-
-  @ModelSync("dasdas", "dasdas", { type: String })
-  readonly checkedValue!: string;
 }
 </script>
 
