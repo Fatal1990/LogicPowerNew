@@ -9,7 +9,7 @@
         :radioName="'paymentTypes'"
         :radioFor="paymentTypeKey"
         :radioTitle="paymentType.title"
-        :isChecked="selectedPaymentType"
+        :isChecked="selectedPaymentType === paymentTypeKey"
         :radioValue="paymentTypeKey"
         v-model="selectedPaymentType"
       />
@@ -54,7 +54,7 @@ export default class CheckoutPaymentN extends Vue {
   };
 
   extra = null;
-  selectedPaymentType = "inst";
+  selectedPaymentType = "cash";
 
   onExtraReady(extra) {
     this.extra = extra;

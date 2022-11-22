@@ -7,6 +7,7 @@
         :value="radioValue"
         :name="radioName"
         :checked="isChecked"
+        @change="selectedValue = radioValue"
       />
       <span class="radio-label__checkmark"></span>
       <span class="radio-label__option">{{ radioTitle }}</span>
@@ -29,10 +30,6 @@ export default class RadioBtnGroupComponent extends Vue {
   @Prop({ required: false }) isChecked: boolean;
 
   @VModel() selectedValue;
-
-  selectedValueChange(value) {
-    this.selectedValue = this.$emit("input", value);
-  }
 }
 </script>
 
