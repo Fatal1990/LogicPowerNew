@@ -6,7 +6,7 @@
         type="text"
         ref="input"
         @input="setInputValue"
-        v-model.lazy="inputValue"
+        v-model="inputValue"
         :class="{ filled: inputValue.length }"
       />
       <span class="input__caption">Имя</span>

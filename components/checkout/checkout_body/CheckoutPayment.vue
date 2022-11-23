@@ -1,141 +1,87 @@
 <template>
-  <section class="payment">
-    <h2 class="payment__title">Способы оплаты</h2>
-    <RadioBtnGroup
-      :inputList="cashRadio"
-      :name="'paymentType'"
-      :isChecked="radioPaymentValue === PAYMENT_TYPE.cash"
-      v-model="radioPaymentValue"
-    />
-    <RadioBtnGroup
-      :inputList="cashlessRadio"
-      :name="'paymentType'"
-      v-model="radioPaymentValue"
-    />
-    <RadioBtnGroup
-      :inputList="cashlessEntepreneurRadio"
-      :name="'paymentType'"
-      v-model="radioPaymentValue"
-    />
-    <div v-show="radioPaymentValue === PAYMENT_TYPE.cashlessEntepreneur">
+  <div class="payment">
+    <div
+      class="payment__item"
+      v-for="(paymentType, paymentTypeKey) in paymentTypes"
+      :key="paymentTypeKey"
+    >
+      <RadioBtnGroup
+        :radioName="'paymentTypes'"
+        :radioFor="paymentTypeKey"
+        :radioTitle="paymentType.title"
+        :isChecked="selectedPaymentType === paymentTypeKey"
+        :radioValue="paymentTypeKey"
+        v-model="selectedPaymentType"
+      />
+      <component
+        v-if="paymentTypeKey === selectedPaymentType"
+        :is="paymentTypes[selectedPaymentType].component"
+        @extraReady="onExtraReady"
+      />
     </div>
-    <RadioBtnGroup
-      :inputList="cashlessEntityRadio"
-      :name="'paymentType'"
-      v-model="radioPaymentValue"
-    />
-    <div v-show="radioPaymentValue === PAYMENT_TYPE.cashlessEntity">
-      <Input />
-      <Input />
-    </div>
-    <RadioBtnGroup
-      :inputList="inInstRadio"
-      :name="'paymentType'"
-      v-model="radioPaymentValue"
-    />
-    <CheckoutInst v-show="radioPaymentValue === PAYMENT_TYPE.inInst" />
-    <RadioBtnGroup
-      :inputList="instRadio"
-      :name="'paymentType'"
-      v-model="radioPaymentValue"
-    />
-    <CheckoutInst v-show="radioPaymentValue === PAYMENT_TYPE.inst" />
-  </section>
+  </div>
 </template>
 
 <script lang="ts">
 import { Options, Vue } from "~/tools/version-types";
-import RadioBtnGroup from "@/components/common/buttons/RadioBtnGroup.vue";
-import Input from "@/components/common/input/Input.vue";
-import CheckoutInst from "@/components/checkout/common/CheckoutInst.vue";
-import CheckoutCashType from "@/components/checkout/checkout_payment_types/CheckoutCashType.vue";
-import CheckoutCashlessType from "@/components/checkout/checkout_payment_types/CheckoutCashlessType.vue";
-import { Component } from "vue/types/umd";
-
-enum PAYMENT_TYPE {
-  cashless = "cashless",
-  cash = "cash",
-  inst = "inst",
-  inInst = "inInst",
-  cashlessEntity = "cashlessEntity",
-  cashlessEntepreneur = "cashlessEntepreneur",
-}
-
-type PaymentType = {
-  paymentType: PAYMENT_TYPE;
-  component: Component;
-};
-
-type RadioBtnModel = {
-  title: string;
-  value: PAYMENT_TYPE;
-  tip?: string;
-};
+import CheckoutCashTypeComponent from "@/components/checkout/checkout_payment_types/CheckoutCashType.vue";
+import CheckoutCashlessTypeComponent from "@/components/checkout/checkout_payment_types/CheckoutCashlessType.vue";
+import CheckoutInstTypeComponent from "@/components/checkout/checkout_payment_types/CheckoutInstType.vue";
+import RadioBtnGroup from "~/components/common/buttons/RadioBtnGroup.vue";
+import CheckoutEntityTypeComponent from "@/components/checkout/checkout_payment_types/CheckoutEntityType.vue";
+import CheckoutEntepreneurTypeComponent from "@/components/checkout/checkout_payment_types/CheckoutEntepreneurType.vue";
+import CheckoutIninstTypeComponent from "@/components/checkout/checkout_payment_types/CheckoutIninstType.vue";
 
 @Options({
-  name: "CheckoutPaymentComponent",
   components: {
     RadioBtnGroup,
-    Input,
-    CheckoutInst,
-    CheckoutCashType,
-    CheckoutCashlessType,
+    CheckoutCashTypeComponent,
+    CheckoutCashlessTypeComponent,
+    CheckoutInstTypeComponent,
+    CheckoutEntityTypeComponent,
+    CheckoutEntepreneurTypeComponent,
+    CheckoutIninstTypeComponent,
   },
 })
-export default class CheckoutPaymentComponent extends Vue {
-  PAYMENT_TYPE = PAYMENT_TYPE;
-  radioPaymentValue: PAYMENT_TYPE = PAYMENT_TYPE.cash;
-
-  paymentTypes: PaymentType[] = [
-    { paymentType: PAYMENT_TYPE.cash, component: CheckoutCashType },
-    { paymentType: PAYMENT_TYPE.cashless, component: CheckoutCashlessType },
-  ];
-
-  cashlessRadio: RadioBtnModel[] = [
-    {
-      title: "Оплата картой",
-      value: PAYMENT_TYPE.cashless,
-    },
-  ];
-
-  cashRadio: RadioBtnModel[] = [
-    {
+export default class CheckoutPayment extends Vue {
+  paymentTypes = {
+    cash: {
       title: "Наличными при получении",
-      value: PAYMENT_TYPE.cash,
+      component: CheckoutCashTypeComponent,
     },
-  ];
-
-  instRadio: RadioBtnModel[] = [
-    {
-      title: "Мгновенная рассрочка",
-      value: PAYMENT_TYPE.inst,
+    cashless: {
+      title: "Оплата картой",
+      component: CheckoutCashlessTypeComponent,
     },
-  ];
-
-  inInstRadio: RadioBtnModel[] = [
-    {
-      title: "Оплата частями",
-      value: PAYMENT_TYPE.inInst,
-    },
-  ];
-
-  cashlessEntityRadio: RadioBtnModel[] = [
-    {
-      title: "Безналичный расчет для юридических лиц",
-      value: PAYMENT_TYPE.cashlessEntity,
-    },
-  ];
-
-  cashlessEntepreneurRadio: RadioBtnModel[] = [
-    {
+    cashlessEntepreneur: {
       title: "Безналичный расчет для ФОП",
-      value: PAYMENT_TYPE.cashlessEntepreneur,
+      component: CheckoutEntepreneurTypeComponent,
     },
-  ];
+    cashlessEntity: {
+      title: "Безналичный расчет для юридических лиц",
+      component: CheckoutEntityTypeComponent,
+    },
+    inInst: {
+      title: "Оплата частями",
+      component: CheckoutIninstTypeComponent,
+    },
+    inst: {
+      title: "Мгновенная рассрочка",
+      component: CheckoutInstTypeComponent,
+    },
+  };
+
+  extra = null;
+  selectedPaymentType = "cash";
+
+  onExtraReady(extra) {
+    this.extra = extra;
+    console.log(this.extra);
+  }
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .payment {
   max-width: 833px;
   width: 100%;
@@ -152,6 +98,12 @@ export default class CheckoutPaymentComponent extends Vue {
     max-width: none;
 
     padding: 16px;
+  }
+
+  &__item {
+    width: 100%;
+
+    @include flex-container(column, center, flex-start);
   }
 }
 </style>

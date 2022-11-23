@@ -6,8 +6,8 @@
       <div class="checkout__form">
         <div class="main-layout__w">
           <!-- <CheckoutContacts /> -->
-          <!-- <CheckoutOrder /> -->
-          <!-- <CheckoutPayment /> -->
+          <CheckoutOrder />
+          <CheckoutPayment />
           <CheckoutDelivery />
           <!-- <CheckoutComment /> -->
         </div>
@@ -26,9 +26,12 @@ import CheckoutFooterComponent from "@/components/checkout/CheckoutFooter.vue";
 import CheckoutContactsComponent from "@/components/checkout/checkout_body/CheckoutContacts.vue";
 import CheckoutOrderComponent from "@/components/checkout/checkout_body/CheckoutOrder.vue";
 import CheckoutAsideComponent from "@/components/checkout/checkout_body/CheckoutAside.vue";
-import CheckoutPaymentComponent from "@/components/checkout/checkout_body/CheckoutPayment.vue";
+import CheckoutPaymentOldComponent from "@/components/checkout/checkout_body/CheckoutPaymentOld.vue";
 import CheckoutDeliveryComponent from "@components/checkout/checkout_body/CheckoutDelivery.vue";
 import CheckoutCommentComponent from "@components/checkout/checkout_body/CheckoutComment.vue";
+import CheckoutPayment from "@/components/checkout/checkout_body/CheckoutPayment.vue";
+
+
 
 @Component({
   components: {
@@ -38,7 +41,8 @@ import CheckoutCommentComponent from "@components/checkout/checkout_body/Checkou
     CheckoutContactsComponent,
     CheckoutOrderComponent,
     CheckoutAsideComponent,
-    CheckoutPaymentComponent,
+    CheckoutPaymentOldComponent,
+    CheckoutPayment,
     CheckoutCommentComponent,
     CheckoutDeliveryComponent,
   },

@@ -1,6 +1,11 @@
 <template>
   <div class="payment-component">
-    <SelectGroup />
+    Кол-во платежей {{extraChange}}
+    <SelectGroup
+      :placeholder="'Кол-во платежей'"
+      :selectList="inInstList"
+      v-model="extraChange"
+    />
   </div>
 </template>
 
@@ -9,16 +14,23 @@ import { Options, Vue } from "~/tools/version-types";
 import SelectGroup from "@/components/common/buttons/SelectGroup.vue";
 
 @Options({
-  name: "CheckoutInstTypeComponent",
+  name: "CheckoutIninstTypeComponent",
   components: {
     SelectGroup,
   },
 })
-export default class CheckoutInstTypeComponent extends Vue {
+export default class CheckoutIninstTypeComponent extends Vue {
+  inInstList = ["3 платежа", "4 платежа", "6 платежей", "12 платежей"];
+
   extra = {
-    input1: "hello",
-    input2: "41415548488854",
+    inInst: "",
   };
+
+  extraChange = '';
+
+//   extraChange() {
+//     this.extra.inInst = ;
+//   }
 
   mounted() {
     this.$emit("extraReady", this.extra);

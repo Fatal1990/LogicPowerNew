@@ -1,20 +1,21 @@
 <template>
   <div class="payment-component">
-    <SelectGroup />
+    <Input />
+    <Input />
   </div>
 </template>
 
 <script lang="ts">
 import { Options, Vue } from "~/tools/version-types";
-import SelectGroup from "@/components/common/buttons/SelectGroup.vue";
+import Input from "@/components/common/input/Input.vue";
 
 @Options({
-  name: "CheckoutInstTypeComponent",
+  name: "CheckoutEntityTypeComponent",
   components: {
-    SelectGroup,
+    Input,
   },
 })
-export default class CheckoutInstTypeComponent extends Vue {
+export default class CheckoutEntityTypeComponent extends Vue {
   extra = {
     input1: "hello",
     input2: "41415548488854",

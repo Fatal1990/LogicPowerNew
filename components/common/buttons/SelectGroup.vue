@@ -19,14 +19,14 @@
     <div class="select__option-list">
       <div
         class="select__option-item"
-        v-for="selectedItem of selectList"
-        :key="selectedItem"
+        v-for="item of selectList"
+        :key="item"
         @click.stop="
-          choisedValue = selectedItem;
+          choisedValue = item;
           openList = false;
         "
       >
-        {{ selectedItem }}
+        {{ item }}
       </div>
     </div>
   </div>
@@ -35,7 +35,7 @@
 <script lang="ts">
 import { Options, Vue } from "~/tools/version-types";
 import SvgIcon from "@shared/components/svg/SvgIcon.vue";
-import { Prop } from "vue-property-decorator";
+import { Prop, VModel, Watch } from "vue-property-decorator";
 
 @Options({
   name: "SelectGroupComponent",
@@ -46,7 +46,21 @@ export default class SelectGroupComponent extends Vue {
   @Prop({ required: false }) placeholder: string;
 
   openList: boolean = false;
+
+  @VModel()
   choisedValue: string = "";
+
+  mounted(): void
+  {
+    setTimeout(() => {
+      this.choisedValue = 'dsa'
+    }, 7000)
+  }
+
+  @Watch('choisedValue')
+  dadfa() {
+    this.$emit('input', this.choisedValue)
+  }
 }
 </script>
 
