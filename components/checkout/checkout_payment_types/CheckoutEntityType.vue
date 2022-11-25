@@ -1,13 +1,14 @@
 <template>
   <div class="payment-component">
-    <Input />
-    <Input />
+    <Input v-model="extra.entityName" />
+    <Input v-model="extra.entityCard"/>
   </div>
 </template>
 
 <script lang="ts">
 import { Options, Vue } from "~/tools/version-types";
 import Input from "@/components/common/input/Input.vue";
+import { Watch } from "vue-property-decorator";
 
 @Options({
   name: "CheckoutEntityTypeComponent",
@@ -17,11 +18,17 @@ import Input from "@/components/common/input/Input.vue";
 })
 export default class CheckoutEntityTypeComponent extends Vue {
   extra = {
-    input1: "hello",
-    input2: "41415548488854",
+    entityName: "",
+    entityCard: "",
   };
 
-  mounted() {
+  @Watch("extra.entityName")
+  changeNameInput() {
+    this.$emit("extraReady", this.extra);
+  }
+
+  @Watch("extra.entityCard")
+  changeCardInput() {
     this.$emit("extraReady", this.extra);
   }
 }

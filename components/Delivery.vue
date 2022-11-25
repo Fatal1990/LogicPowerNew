@@ -267,7 +267,7 @@ import { Component, Vue } from "~/tools/version-types";
 export default class DeliveryComponent extends Vue {}
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .delivery-payment {
   @extend %flex-column;
   align-items: center;

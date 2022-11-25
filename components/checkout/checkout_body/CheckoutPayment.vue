@@ -1,5 +1,6 @@
 <template>
   <div class="payment">
+    <h2 class="payment__title">Способы оплаты</h2>
     <div
       class="payment__item"
       v-for="(paymentType, paymentTypeKey) in paymentTypes"
@@ -23,16 +24,16 @@
 </template>
 
 <script lang="ts">
-import { Options, Vue } from "~/tools/version-types";
+import { Component, Vue } from "~/tools/version-types";
 import CheckoutCashTypeComponent from "@/components/checkout/checkout_payment_types/CheckoutCashType.vue";
 import CheckoutCashlessTypeComponent from "@/components/checkout/checkout_payment_types/CheckoutCashlessType.vue";
 import CheckoutInstTypeComponent from "@/components/checkout/checkout_payment_types/CheckoutInstType.vue";
-import RadioBtnGroup from "~/components/common/buttons/RadioBtnGroup.vue";
+import RadioBtnGroup from "@/components/common/buttons/RadioBtnGroup.vue";
 import CheckoutEntityTypeComponent from "@/components/checkout/checkout_payment_types/CheckoutEntityType.vue";
 import CheckoutEntepreneurTypeComponent from "@/components/checkout/checkout_payment_types/CheckoutEntepreneurType.vue";
 import CheckoutIninstTypeComponent from "@/components/checkout/checkout_payment_types/CheckoutIninstType.vue";
 
-@Options({
+@Component({
   components: {
     RadioBtnGroup,
     CheckoutCashTypeComponent,
@@ -98,6 +99,16 @@ export default class CheckoutPayment extends Vue {
     max-width: none;
 
     padding: 16px;
+  }
+
+  &__title {
+    @include fontUnify(20, 30, 600);
+    text-transform: uppercase;
+
+    @include mobile {
+      @include fontUnify(16, 22, 600);
+      text-transform: none;
+    }
   }
 
   &__item {

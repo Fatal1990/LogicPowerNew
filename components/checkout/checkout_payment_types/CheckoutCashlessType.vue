@@ -1,5 +1,4 @@
-<template>
-</template>
+<template></template>
 
 <script lang="ts">
 import { Options, Vue } from "~/tools/version-types";
@@ -8,7 +7,13 @@ import { Options, Vue } from "~/tools/version-types";
   name: "CheckoutCashlessTypeComponent",
 })
 export default class CheckoutCashlessTypeComponent extends Vue {
-  paymentTypeExtra: {};
+  extra: {
+    cashless: "cashless";
+  };
+
+  mounted() {
+    this.$emit("extraReady", this.extra);
+  }
 }
 </script>
 

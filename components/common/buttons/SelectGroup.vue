@@ -50,15 +50,15 @@ export default class SelectGroupComponent extends Vue {
   @VModel()
   choisedValue: string = "";
 
-  mounted(): void
-  {
-    setTimeout(() => {
-      this.choisedValue = 'dsa'
-    }, 7000)
-  }
+  // mounted(): void
+  // {
+  //   setTimeout(() => {
+  //     this.choisedValue = 'dsa'
+  //   }, 7000)
+  // }
 
   @Watch('choisedValue')
-  dadfa() {
+  changeChoisedValue() {
     this.$emit('input', this.choisedValue)
   }
 }

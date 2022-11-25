@@ -61,12 +61,9 @@
           согласования всех деталей.
         </p>
       </div>
-      <label class="aside__call">
-        <input type="checkbox" />
-        <span class="aside__caption"
-          >Не перезванивать для оформления заказа</span
-        >
-      </label>
+      <CheckBox>
+        <span class="aside__caption">Не перезванивать для оформления заказа</span>
+      </CheckBox>
     </div>
   </aside>
 </template>
@@ -74,11 +71,13 @@
 <script lang="ts">
 import { Options, Vue } from "~/tools/version-types";
 import SvgIcon from "@shared/components/svg/SvgIcon.vue";
+import CheckBox from "@/components/common/buttons/CheckBox.vue";
 
 @Options({
   name: "CheckoutAsideComponent",
   components: {
     SvgIcon,
+    CheckBox,
   },
 })
 export default class CheckoutAsideComponent extends Vue {
@@ -189,43 +188,6 @@ export default class CheckoutAsideComponent extends Vue {
 
     @include mobile {
       @include fontUnify(12, 16);
-    }
-  }
-
-  &__call {
-    & input {
-      position: absolute;
-      z-index: -1;
-      opacity: 0;
-    }
-
-    & span {
-      @include flex-container(row, space-between, center);
-      gap: 24px;
-
-      user-select: none;
-    }
-
-    & span::before {
-      content: "";
-      display: inline-block;
-      width: 24px;
-      height: 24px;
-      border: 1px solid $color-border-grey-light;
-      border-radius: 4px;
-      background-repeat: no-repeat;
-      background-position: center;
-      transition: 0.2s ease;
-    }
-
-    & input:not(:checked) + span:hover::before {
-      border-color: $color-main;
-    }
-
-    & input:checked + span::before {
-      border-color: $color-main;
-      background-color: $color-main;
-      background-image: url("@/assets/icons/check-icon.svg");
     }
   }
 }

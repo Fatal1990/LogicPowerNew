@@ -26,6 +26,7 @@
 <script lang="ts">
 import { Component, Vue } from "~/tools/version-types";
 import SvgIcon from "@/_shared/components/svg/SvgIcon.vue";
+import { Watch } from "vue-property-decorator";
 
 @Component({
   name: "InputComponent",
@@ -47,6 +48,11 @@ export default class InputComponent extends Vue {
 
   clearInputValue() {
     this.inputValue = "";
+  }
+
+  @Watch('inputValue')
+  inputEmit() {
+    this.$emit("input", this.inputValue)
   }
 }
 </script>

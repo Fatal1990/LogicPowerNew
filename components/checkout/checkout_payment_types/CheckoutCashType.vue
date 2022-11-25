@@ -7,7 +7,9 @@ import { Options, Vue } from "~/tools/version-types";
   name: "CheckoutCashTypeComponent",
 })
 export default class CheckoutCashTypeComponent extends Vue {
-  extra: {};
+  extra: {
+    cash: "cash"
+  };
 
   mounted() {
     this.$emit("extraReady", this.extra);    
