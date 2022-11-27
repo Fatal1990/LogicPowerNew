@@ -13,37 +13,40 @@
         disabled
         :placeholder="placeholder"
         :value="choisedValue"
+        :class="{ filled: choisedValue.length }"
       />
+      <span class="select__caption">{{ caption }}</span>
     </div>
     <SvgIcon class="select__icon" :icon="icons['arrow-down']" />
     <div class="select__option-list">
       <div
         class="select__option-item"
         v-for="item of selectList"
-        :key="item"
+        :key="item.title"
         @click.stop="
-          choisedValue = item;
+          choisedValue = item.title;
           openList = false;
         "
       >
-        {{ item }}
+        {{ item.title }}
       </div>
     </div>
   </div>
 </template>
 
 <script lang="ts">
-import { Options, Vue } from "~/tools/version-types";
+import { Component, Vue } from "~/tools/version-types";
 import SvgIcon from "@shared/components/svg/SvgIcon.vue";
 import { Prop, VModel, Watch } from "vue-property-decorator";
 
-@Options({
+@Component({
   name: "SelectGroupComponent",
   components: { SvgIcon },
 })
 export default class SelectGroupComponent extends Vue {
   @Prop({ required: true }) selectList: any[];
   @Prop({ required: false }) placeholder: string;
+  @Prop({ required: false }) caption: string;
 
   openList: boolean = false;
 
@@ -57,9 +60,9 @@ export default class SelectGroupComponent extends Vue {
   //   }, 7000)
   // }
 
-  @Watch('choisedValue')
+  @Watch("choisedValue")
   changeChoisedValue() {
-    this.$emit('input', this.choisedValue)
+    this.$emit("input", this.choisedValue);
   }
 }
 </script>
@@ -105,6 +108,46 @@ export default class SelectGroupComponent extends Vue {
     color: var(--color-ink-base);
 
     cursor: pointer;
+
+    &:focus {
+      & + .select__caption {
+        @include fontUnify(12, 12);
+
+        top: 0px;
+        left: 12px;
+
+        background-color: white;
+
+        padding: 0 4px;
+      }
+    }
+
+    &.filled {
+      & + .select__caption {
+        @include fontUnify(12, 12);
+
+        top: 0px;
+        left: 12px;
+
+        background-color: white;
+
+        padding-inline: 4px;
+      }
+    }
+  }
+
+  &__caption {
+    @include fontUnify;
+    color: $color-text-lighter;
+
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+
+    pointer-events: none;
+
+    transition: 0.1s ease-out;
   }
 
   &__icon {

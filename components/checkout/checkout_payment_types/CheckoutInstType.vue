@@ -5,7 +5,7 @@
         Выберите количество месяцев
       </p>
       <SelectGroup
-        :placeholder="'Кол-во платежей'"
+        :caption="'Кол-во платежей'"
         :selectList="instList"
         v-model="extra.inst"
       />
@@ -49,7 +49,12 @@ import { Watch } from "vue-property-decorator";
   },
 })
 export default class CheckoutInstTypeComponent extends Vue {
-  instList = ["3 платежа", "4 платежа", "6 платежей", "12 платежей"];
+  instList = [
+    { title: "2 платежа" },
+    { title: "3 платежа" },
+    { title: "5 платежей" },
+    { title: "24 платежей" },
+  ];
 
   onePay: number = 0;
   sum: number = 26000;

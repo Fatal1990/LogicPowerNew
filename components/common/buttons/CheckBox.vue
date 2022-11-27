@@ -1,17 +1,27 @@
 <template>
-  <label class="checkbox">
+  <label class="checkbox" @click="checked = !checked">
     <input type="checkbox" />
     <slot class="checkbox__caption"></slot>
   </label>
 </template>
 
 <script lang="ts">
+import { VModel, Watch } from "vue-property-decorator";
 import { Options, Vue } from "~/tools/version-types";
 
 @Options({
   name: "CheckBoxComponent",
 })
-export default class CheckBoxComponent extends Vue {}
+export default class CheckBoxComponent extends Vue {
+  @VModel()
+  checked: boolean = false;
+
+  @Watch("checked")
+  checkedChange() {
+    this.$emit("change", this.checked);
+    console.log(this.checked);
+  }
+}
 </script>
 
 <style lang="scss" scoped>

@@ -2,24 +2,25 @@
   <section class="delivery">
     <h2 class="delivery__title">Доставка</h2>
     <div class="delivery__list">
-      <div
-        class="delivery__item"
-        v-for="(deliveryType, deliveryTypeKey) in deliveryTypes"
-        :key="deliveryTypeKey"
-      >
-        <RadioBtnGroup
-          :radioName="'deliveryTypes'"
-          :radioFor="deliveryTypeKey"
-          :radioTitle="deliveryType.title"
-          :isChecked="selectedDeliveryType === deliveryTypeKey"
-          :radioValue="deliveryTypeKey"
-          v-model="selectedDeliveryType"
-        />
-        <component
-          v-if="deliveryTypeKey === selectedDeliveryType"
-          :is="deliveryTypes[selectedDeliveryType].component"
-          @extraReady="onExtraReady"
-        />
+      <SelectGroup
+        :selectList="newList"
+        :caption="'Способ доставки'"
+        v-model="selectedPostType"
+      />
+    </div>
+    <component
+      v-if="exactItem"
+      :is="exactItem.component"
+      @extraReady="onExtraReady"
+    />
+    <div class="delivery__recepient" v-if="exactItem">
+      <p>Получатель:</p>
+      <CheckBox v-model="anotherRecipient">
+        <span>Другой человек</span>
+      </CheckBox>
+      <span>{{anotherRecipient}}</span>
+      <div v-if="anotherRecipient">
+        <Input />
       </div>
     </div>
   </section>
@@ -30,6 +31,22 @@ import { Component, Vue } from "~/tools/version-types";
 import CheckoutUkrPochtaType from "@/components/checkout/checkout_delivery_types/CheckoutUkrPochtaType.vue";
 import CheckoutNovaPoshtaType from "@/components/checkout/checkout_delivery_types/CheckoutNovaPoshtaType.vue";
 import RadioBtnGroup from "@/components/common/buttons/RadioBtnGroup.vue";
+import SelectGroup from "@/components/common/buttons/SelectGroup.vue";
+import { Watch } from "vue-property-decorator";
+import CheckBox from "@/components/common/buttons/CheckBox.vue";
+import Input from "@/components/common/input/Input.vue";
+
+const list = (postTypes) => {
+  const newArr: any[] = [];
+
+  for (let elem in postTypes) {
+    newArr.push(postTypes[elem]);
+  }
+
+  console.log(newArr);
+
+  return newArr;
+};
 
 @Component({
   name: "CheckoutDeliveryComponent",
@@ -37,10 +54,15 @@ import RadioBtnGroup from "@/components/common/buttons/RadioBtnGroup.vue";
     CheckoutUkrPochtaType,
     CheckoutNovaPoshtaType,
     RadioBtnGroup,
+    SelectGroup,
+    CheckBox,
+    Input,
   },
 })
 export default class CheckoutDeliveryComponent extends Vue {
-  deliveryTypes = {
+  // deliveryTypeList = ["Новая почта", "Укр Почта"];
+
+  postTypes = {
     novaPoshta: {
       title: "Новая почта",
       component: CheckoutNovaPoshtaType,
@@ -51,12 +73,23 @@ export default class CheckoutDeliveryComponent extends Vue {
     },
   };
 
+  newList = list(this.postTypes);
+  exactItem: any = null;
+
   extra = null;
-  selectedDeliveryType = "";
+  selectedPostType = "";
+  anotherRecipient: boolean = false;
 
   onExtraReady(extra) {
     this.extra = extra;
-    console.log(this.extra);
+    console.log("extra delivery", this.extra);
+  }
+
+  @Watch("selectedPostType")
+  getRightComponent() {
+    this.exactItem = this.newList.filter(
+      (item) => item.title === this.selectedPostType
+    )[0];
   }
 }
 </script>
@@ -91,14 +124,26 @@ export default class CheckoutDeliveryComponent extends Vue {
   }
 
   &__list {
+    max-width: 363px;
     width: 100%;
 
     @include flex-container(row, flex-start, center);
     gap: 24px;
+
+    @include mobile {
+      max-width: none;
+    }
   }
 
   &__item {
     @include flex-container(column, center, flex-start);
+  }
+
+  &__recepient {
+    @include flex-container(column, center, flex-start);
+    gap: 24px;
+
+    @include fontUnify;
   }
 }
 </style>

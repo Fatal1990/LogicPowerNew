@@ -6,10 +6,11 @@
         type="text"
         ref="input"
         @input="setInputValue"
+        @blur="validCheck"
         v-model="inputValue"
         :class="{ filled: inputValue.length }"
       />
-      <span class="input__caption">Имя</span>
+      <span class="input__caption">{{ caption }}</span>
       <SvgIcon
         class="input__clear"
         :icon="icons['cross']"
@@ -17,7 +18,7 @@
         @click.native="clearInputValue"
       />
     </div>
-    <span class="input__error-caption" v-show="inputValue.length <= 1"
+    <span class="input__error-caption" v-show="valueError"
       >Неккоректные вводные данные</span
     >
   </div>
@@ -26,7 +27,7 @@
 <script lang="ts">
 import { Component, Vue } from "~/tools/version-types";
 import SvgIcon from "@/_shared/components/svg/SvgIcon.vue";
-import { Watch } from "vue-property-decorator";
+import { Prop, Watch } from "vue-property-decorator";
 
 @Component({
   name: "InputComponent",
@@ -35,11 +36,14 @@ import { Watch } from "vue-property-decorator";
   },
 })
 export default class InputComponent extends Vue {
+  @Prop({ required: false }) caption: string;
+
   $refs: {
     input: HTMLInputElement;
   };
 
   inputValue: string = "";
+  valueError: boolean = false;
 
   setInputValue() {
     this.inputValue = this.$refs.input.value;
@@ -50,9 +54,15 @@ export default class InputComponent extends Vue {
     this.inputValue = "";
   }
 
-  @Watch('inputValue')
+  validCheck() {
+    this.inputValue.length >= 1
+      ? (this.valueError = false)
+      : (this.valueError = true);
+  }
+
+  @Watch("inputValue")
   inputEmit() {
-    this.$emit("input", this.inputValue)
+    this.$emit("input", this.inputValue);
   }
 }
 </script>
@@ -156,7 +166,7 @@ export default class InputComponent extends Vue {
     user-select: none;
     cursor: pointer;
   }
-  
+
   &__error-caption {
     @include fontUnify(12, 16);
 

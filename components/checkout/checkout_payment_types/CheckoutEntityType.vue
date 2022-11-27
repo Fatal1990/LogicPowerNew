@@ -1,7 +1,7 @@
 <template>
   <div class="payment-component">
-    <Input v-model="extra.entityName" />
-    <Input v-model="extra.entityCard"/>
+    <Input v-model="extra.entityName" :caption="'Название организации'"/>
+    <Input v-model="extra.entityCard" :caption="'Номер счета'"/>
   </div>
 </template>
 
