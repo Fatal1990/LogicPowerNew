@@ -80,6 +80,12 @@ export default class CheckoutDeliveryComponent extends Vue {
   selectedPostType = "";
   anotherRecipient: boolean = false;
 
+  // setAnotherRecipient() {
+  //   this.anotherRecipient = !this.anotherRecipient;
+  //   console.log(this.anotherRecipient);
+    
+  // }
+
   onExtraReady(extra) {
     this.extra = extra;
     console.log("extra delivery", this.extra);
