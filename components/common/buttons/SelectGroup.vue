@@ -39,12 +39,18 @@ import { Component, Vue } from "~/tools/version-types";
 import SvgIcon from "@shared/components/svg/SvgIcon.vue";
 import { Prop, VModel, Watch } from "vue-property-decorator";
 
+interface selectList {
+  title: string,
+  component?: any
+}
+
+
 @Component({
   name: "SelectGroupComponent",
   components: { SvgIcon },
 })
 export default class SelectGroupComponent extends Vue {
-  @Prop({ required: true }) selectList: any[];
+  @Prop({ required: true }) selectList: selectList[];
   @Prop({ required: false }) placeholder: string;
   @Prop({ required: false }) caption: string;
 

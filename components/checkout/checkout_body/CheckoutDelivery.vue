@@ -18,10 +18,7 @@
       <CheckBox v-model="anotherRecipient">
         <span>Другой человек</span>
       </CheckBox>
-      <span>{{anotherRecipient}}</span>
-      <div v-if="anotherRecipient">
-        <Input />
-      </div>
+      <CheckoutAnotherRecipient v-if="anotherRecipient" />
     </div>
   </section>
 </template>
@@ -35,6 +32,7 @@ import SelectGroup from "@/components/common/buttons/SelectGroup.vue";
 import { Watch } from "vue-property-decorator";
 import CheckBox from "@/components/common/buttons/CheckBox.vue";
 import Input from "@/components/common/input/Input.vue";
+import CheckoutAnotherRecipient from "@/components/checkout/checkout_another_recipient/CheckoutAnotherRecipient.vue";
 
 const list = (postTypes) => {
   const newArr: any[] = [];
@@ -57,6 +55,7 @@ const list = (postTypes) => {
     SelectGroup,
     CheckBox,
     Input,
+    CheckoutAnotherRecipient,
   },
 })
 export default class CheckoutDeliveryComponent extends Vue {
@@ -83,7 +82,7 @@ export default class CheckoutDeliveryComponent extends Vue {
   // setAnotherRecipient() {
   //   this.anotherRecipient = !this.anotherRecipient;
   //   console.log(this.anotherRecipient);
-    
+
   // }
 
   onExtraReady(extra) {
